@@ -1,0 +1,8 @@
+D:\IJunior\Questionnaire\bin\Debug\Questionnaire.exe.config
+D:\IJunior\Questionnaire\bin\Debug\Questionnaire.exe
+D:\IJunior\Questionnaire\bin\Debug\Questionnaire.pdb
+D:\IJunior\Questionnaire\obj\Debug\Questionnaire.csproj.AssemblyReference.cache
+D:\IJunior\Questionnaire\obj\Debug\Questionnaire.csproj.SuggestedBindingRedirects.cache
+D:\IJunior\Questionnaire\obj\Debug\Questionnaire.csproj.CoreCompileInputs.cache
+D:\IJunior\Questionnaire\obj\Debug\Questionnaire.exe
+D:\IJunior\Questionnaire\obj\Debug\Questionnaire.pdb
