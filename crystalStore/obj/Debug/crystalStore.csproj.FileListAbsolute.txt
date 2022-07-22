@@ -1,0 +1,8 @@
+D:\IJunior\crystalStore\bin\Debug\crystalStore.exe.config
+D:\IJunior\crystalStore\bin\Debug\crystalStore.exe
+D:\IJunior\crystalStore\bin\Debug\crystalStore.pdb
+D:\IJunior\crystalStore\obj\Debug\crystalStore.csproj.AssemblyReference.cache
+D:\IJunior\crystalStore\obj\Debug\crystalStore.csproj.SuggestedBindingRedirects.cache
+D:\IJunior\crystalStore\obj\Debug\crystalStore.csproj.CoreCompileInputs.cache
+D:\IJunior\crystalStore\obj\Debug\crystalStore.exe
+D:\IJunior\crystalStore\obj\Debug\crystalStore.pdb
