@@ -1,8 +1,0 @@
-D:\IJunior\ZnachVar\bin\Debug\ZnachVar.exe.config
-D:\IJunior\ZnachVar\bin\Debug\ZnachVar.exe
-D:\IJunior\ZnachVar\bin\Debug\ZnachVar.pdb
-D:\IJunior\ZnachVar\obj\Debug\ZnachVar.csproj.AssemblyReference.cache
-D:\IJunior\ZnachVar\obj\Debug\ZnachVar.csproj.SuggestedBindingRedirects.cache
-D:\IJunior\ZnachVar\obj\Debug\ZnachVar.csproj.CoreCompileInputs.cache
-D:\IJunior\ZnachVar\obj\Debug\ZnachVar.exe
-D:\IJunior\ZnachVar\obj\Debug\ZnachVar.pdb
