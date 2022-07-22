@@ -1,0 +1,8 @@
+D:\IJunior\queueAtTheClinic\bin\Debug\queueAtTheClinic.exe.config
+D:\IJunior\queueAtTheClinic\bin\Debug\queueAtTheClinic.exe
+D:\IJunior\queueAtTheClinic\bin\Debug\queueAtTheClinic.pdb
+D:\IJunior\queueAtTheClinic\obj\Debug\queueAtTheClinic.csproj.AssemblyReference.cache
+D:\IJunior\queueAtTheClinic\obj\Debug\queueAtTheClinic.csproj.SuggestedBindingRedirects.cache
+D:\IJunior\queueAtTheClinic\obj\Debug\queueAtTheClinic.csproj.CoreCompileInputs.cache
+D:\IJunior\queueAtTheClinic\obj\Debug\queueAtTheClinic.exe
+D:\IJunior\queueAtTheClinic\obj\Debug\queueAtTheClinic.pdb
