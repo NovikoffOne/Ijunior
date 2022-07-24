@@ -1,7 +1,0 @@
-D:\CSharp\IUNIOR\DZ\guessTheWord\bin\Debug\guessTheWord.exe.config
-D:\CSharp\IUNIOR\DZ\guessTheWord\bin\Debug\guessTheWord.exe
-D:\CSharp\IUNIOR\DZ\guessTheWord\bin\Debug\guessTheWord.pdb
-D:\CSharp\IUNIOR\DZ\guessTheWord\obj\Debug\guessTheWord.csproj.AssemblyReference.cache
-D:\CSharp\IUNIOR\DZ\guessTheWord\obj\Debug\guessTheWord.csproj.CoreCompileInputs.cache
-D:\CSharp\IUNIOR\DZ\guessTheWord\obj\Debug\guessTheWord.exe
-D:\CSharp\IUNIOR\DZ\guessTheWord\obj\Debug\guessTheWord.pdb
