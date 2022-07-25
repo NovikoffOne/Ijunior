@@ -1,7 +1,0 @@
-D:\CSharp\IUNIOR\DZ\CurrencyConverter\obj\Debug\CurrencyConverter.csproj.AssemblyReference.cache
-D:\CSharp\IUNIOR\DZ\CurrencyConverter\obj\Debug\CurrencyConverter.csproj.CoreCompileInputs.cache
-D:\CSharp\IUNIOR\DZ\CurrencyConverter\bin\Debug\CurrencyConverter.exe.config
-D:\CSharp\IUNIOR\DZ\CurrencyConverter\bin\Debug\CurrencyConverter.exe
-D:\CSharp\IUNIOR\DZ\CurrencyConverter\bin\Debug\CurrencyConverter.pdb
-D:\CSharp\IUNIOR\DZ\CurrencyConverter\obj\Debug\CurrencyConverter.exe
-D:\CSharp\IUNIOR\DZ\CurrencyConverter\obj\Debug\CurrencyConverter.pdb
