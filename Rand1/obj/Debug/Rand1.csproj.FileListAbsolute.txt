@@ -1,0 +1,7 @@
+D:\CSharp\IUNIOR\DZ\Rand1\bin\Debug\Rand1.exe.config
+D:\CSharp\IUNIOR\DZ\Rand1\bin\Debug\Rand1.exe
+D:\CSharp\IUNIOR\DZ\Rand1\bin\Debug\Rand1.pdb
+D:\CSharp\IUNIOR\DZ\Rand1\obj\Debug\Rand1.csproj.AssemblyReference.cache
+D:\CSharp\IUNIOR\DZ\Rand1\obj\Debug\Rand1.csproj.CoreCompileInputs.cache
+D:\CSharp\IUNIOR\DZ\Rand1\obj\Debug\Rand1.exe
+D:\CSharp\IUNIOR\DZ\Rand1\obj\Debug\Rand1.pdb
