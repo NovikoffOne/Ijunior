@@ -1,8 +1,0 @@
-D:\IJunior\nameOutput\bin\Debug\nameOutput.exe.config
-D:\IJunior\nameOutput\bin\Debug\nameOutput.exe
-D:\IJunior\nameOutput\bin\Debug\nameOutput.pdb
-D:\IJunior\nameOutput\obj\Debug\nameOutput.csproj.AssemblyReference.cache
-D:\IJunior\nameOutput\obj\Debug\nameOutput.csproj.SuggestedBindingRedirects.cache
-D:\IJunior\nameOutput\obj\Debug\nameOutput.csproj.CoreCompileInputs.cache
-D:\IJunior\nameOutput\obj\Debug\nameOutput.exe
-D:\IJunior\nameOutput\obj\Debug\nameOutput.pdb
