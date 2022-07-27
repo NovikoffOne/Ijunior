@@ -1,0 +1,8 @@
+D:\IJunior\powerOfTwo\bin\Debug\powerOfTwo.exe.config
+D:\IJunior\powerOfTwo\bin\Debug\powerOfTwo.exe
+D:\IJunior\powerOfTwo\bin\Debug\powerOfTwo.pdb
+D:\IJunior\powerOfTwo\obj\Debug\powerOfTwo.csproj.AssemblyReference.cache
+D:\IJunior\powerOfTwo\obj\Debug\powerOfTwo.csproj.SuggestedBindingRedirects.cache
+D:\IJunior\powerOfTwo\obj\Debug\powerOfTwo.csproj.CoreCompileInputs.cache
+D:\IJunior\powerOfTwo\obj\Debug\powerOfTwo.exe
+D:\IJunior\powerOfTwo\obj\Debug\powerOfTwo.pdb
