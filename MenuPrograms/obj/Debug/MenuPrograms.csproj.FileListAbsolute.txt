@@ -1,0 +1,7 @@
+D:\CSharp\IUNIOR\DZ\MenuPrograms\bin\Debug\MenuPrograms.exe.config
+D:\CSharp\IUNIOR\DZ\MenuPrograms\bin\Debug\MenuPrograms.exe
+D:\CSharp\IUNIOR\DZ\MenuPrograms\bin\Debug\MenuPrograms.pdb
+D:\CSharp\IUNIOR\DZ\MenuPrograms\obj\Debug\MenuPrograms.csproj.AssemblyReference.cache
+D:\CSharp\IUNIOR\DZ\MenuPrograms\obj\Debug\MenuPrograms.csproj.CoreCompileInputs.cache
+D:\CSharp\IUNIOR\DZ\MenuPrograms\obj\Debug\MenuPrograms.exe
+D:\CSharp\IUNIOR\DZ\MenuPrograms\obj\Debug\MenuPrograms.pdb
