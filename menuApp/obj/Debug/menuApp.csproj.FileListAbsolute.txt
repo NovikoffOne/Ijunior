@@ -1,0 +1,8 @@
+D:\IJunior\menuApp\obj\Debug\menuApp.csproj.AssemblyReference.cache
+D:\IJunior\menuApp\obj\Debug\menuApp.csproj.SuggestedBindingRedirects.cache
+D:\IJunior\menuApp\obj\Debug\menuApp.csproj.CoreCompileInputs.cache
+D:\IJunior\menuApp\bin\Debug\menuApp.exe.config
+D:\IJunior\menuApp\bin\Debug\menuApp.exe
+D:\IJunior\menuApp\bin\Debug\menuApp.pdb
+D:\IJunior\menuApp\obj\Debug\menuApp.exe
+D:\IJunior\menuApp\obj\Debug\menuApp.pdb
