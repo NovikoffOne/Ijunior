@@ -1,8 +1,0 @@
-D:\IJunior\bossFight\bin\Debug\bossFight.exe.config
-D:\IJunior\bossFight\bin\Debug\bossFight.exe
-D:\IJunior\bossFight\bin\Debug\bossFight.pdb
-D:\IJunior\bossFight\obj\Debug\bossFight.csproj.AssemblyReference.cache
-D:\IJunior\bossFight\obj\Debug\bossFight.csproj.SuggestedBindingRedirects.cache
-D:\IJunior\bossFight\obj\Debug\bossFight.csproj.CoreCompileInputs.cache
-D:\IJunior\bossFight\obj\Debug\bossFight.exe
-D:\IJunior\bossFight\obj\Debug\bossFight.pdb
