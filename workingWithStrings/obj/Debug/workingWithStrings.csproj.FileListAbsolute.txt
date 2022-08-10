@@ -1,8 +1,0 @@
-D:\IJunior\workingWithStrings\bin\Debug\workingWithStrings.exe.config
-D:\IJunior\workingWithStrings\bin\Debug\workingWithStrings.exe
-D:\IJunior\workingWithStrings\bin\Debug\workingWithStrings.pdb
-D:\IJunior\workingWithStrings\obj\Debug\workingWithStrings.csproj.AssemblyReference.cache
-D:\IJunior\workingWithStrings\obj\Debug\workingWithStrings.csproj.SuggestedBindingRedirects.cache
-D:\IJunior\workingWithStrings\obj\Debug\workingWithStrings.csproj.CoreCompileInputs.cache
-D:\IJunior\workingWithStrings\obj\Debug\workingWithStrings.exe
-D:\IJunior\workingWithStrings\obj\Debug\workingWithStrings.pdb
