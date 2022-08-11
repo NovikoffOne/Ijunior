@@ -1,0 +1,8 @@
+D:\IJunior\tenDimensionalArray\bin\Debug\tenDimensionalArray.exe.config
+D:\IJunior\tenDimensionalArray\bin\Debug\tenDimensionalArray.exe
+D:\IJunior\tenDimensionalArray\bin\Debug\tenDimensionalArray.pdb
+D:\IJunior\tenDimensionalArray\obj\Debug\tenDimensionalArray.csproj.AssemblyReference.cache
+D:\IJunior\tenDimensionalArray\obj\Debug\tenDimensionalArray.csproj.SuggestedBindingRedirects.cache
+D:\IJunior\tenDimensionalArray\obj\Debug\tenDimensionalArray.csproj.CoreCompileInputs.cache
+D:\IJunior\tenDimensionalArray\obj\Debug\tenDimensionalArray.exe
+D:\IJunior\tenDimensionalArray\obj\Debug\tenDimensionalArray.pdb
