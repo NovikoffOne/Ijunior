@@ -1,8 +1,0 @@
-D:\IJunior\localMaxima\bin\Debug\localMaxima.exe.config
-D:\IJunior\localMaxima\bin\Debug\localMaxima.exe
-D:\IJunior\localMaxima\bin\Debug\localMaxima.pdb
-D:\IJunior\localMaxima\obj\Debug\localMaxima.csproj.AssemblyReference.cache
-D:\IJunior\localMaxima\obj\Debug\localMaxima.csproj.SuggestedBindingRedirects.cache
-D:\IJunior\localMaxima\obj\Debug\localMaxima.csproj.CoreCompileInputs.cache
-D:\IJunior\localMaxima\obj\Debug\localMaxima.exe
-D:\IJunior\localMaxima\obj\Debug\localMaxima.pdb
