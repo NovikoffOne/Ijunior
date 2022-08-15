@@ -1,0 +1,8 @@
+D:\IJunior\subarrayOfRepetitionsOfNumbers\bin\Debug\subarrayOfRepetitionsOfNumbers.exe.config
+D:\IJunior\subarrayOfRepetitionsOfNumbers\bin\Debug\subarrayOfRepetitionsOfNumbers.exe
+D:\IJunior\subarrayOfRepetitionsOfNumbers\bin\Debug\subarrayOfRepetitionsOfNumbers.pdb
+D:\IJunior\subarrayOfRepetitionsOfNumbers\obj\Debug\subarrayOfRepetitionsOfNumbers.csproj.AssemblyReference.cache
+D:\IJunior\subarrayOfRepetitionsOfNumbers\obj\Debug\subarrayOfRepetitionsOfNumbers.csproj.SuggestedBindingRedirects.cache
+D:\IJunior\subarrayOfRepetitionsOfNumbers\obj\Debug\subarrayOfRepetitionsOfNumbers.csproj.CoreCompileInputs.cache
+D:\IJunior\subarrayOfRepetitionsOfNumbers\obj\Debug\subarrayOfRepetitionsOfNumbers.exe
+D:\IJunior\subarrayOfRepetitionsOfNumbers\obj\Debug\subarrayOfRepetitionsOfNumbers.pdb
