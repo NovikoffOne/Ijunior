@@ -1,0 +1,8 @@
+D:\IJunior\dynamicArray\bin\Debug\dynamicArray.exe.config
+D:\IJunior\dynamicArray\bin\Debug\dynamicArray.exe
+D:\IJunior\dynamicArray\bin\Debug\dynamicArray.pdb
+D:\IJunior\dynamicArray\obj\Debug\dynamicArray.csproj.AssemblyReference.cache
+D:\IJunior\dynamicArray\obj\Debug\dynamicArray.csproj.SuggestedBindingRedirects.cache
+D:\IJunior\dynamicArray\obj\Debug\dynamicArray.csproj.CoreCompileInputs.cache
+D:\IJunior\dynamicArray\obj\Debug\dynamicArray.exe
+D:\IJunior\dynamicArray\obj\Debug\dynamicArray.pdb
