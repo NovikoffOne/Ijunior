@@ -1,0 +1,8 @@
+D:\IJunior\bracketExpression\bin\Debug\bracketExpression.exe.config
+D:\IJunior\bracketExpression\bin\Debug\bracketExpression.exe
+D:\IJunior\bracketExpression\bin\Debug\bracketExpression.pdb
+D:\IJunior\bracketExpression\obj\Debug\bracketExpression.csproj.AssemblyReference.cache
+D:\IJunior\bracketExpression\obj\Debug\bracketExpression.csproj.SuggestedBindingRedirects.cache
+D:\IJunior\bracketExpression\obj\Debug\bracketExpression.csproj.CoreCompileInputs.cache
+D:\IJunior\bracketExpression\obj\Debug\bracketExpression.exe
+D:\IJunior\bracketExpression\obj\Debug\bracketExpression.pdb
