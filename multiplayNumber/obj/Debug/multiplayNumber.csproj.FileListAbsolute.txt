@@ -1,8 +1,0 @@
-D:\IJunior\multiplayNumber\bin\Debug\multiplayNumber.exe.config
-D:\IJunior\multiplayNumber\bin\Debug\multiplayNumber.exe
-D:\IJunior\multiplayNumber\bin\Debug\multiplayNumber.pdb
-D:\IJunior\multiplayNumber\obj\Debug\multiplayNumber.csproj.AssemblyReference.cache
-D:\IJunior\multiplayNumber\obj\Debug\multiplayNumber.csproj.SuggestedBindingRedirects.cache
-D:\IJunior\multiplayNumber\obj\Debug\multiplayNumber.csproj.CoreCompileInputs.cache
-D:\IJunior\multiplayNumber\obj\Debug\multiplayNumber.exe
-D:\IJunior\multiplayNumber\obj\Debug\multiplayNumber.pdb
