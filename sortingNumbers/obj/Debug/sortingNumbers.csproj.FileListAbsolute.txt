@@ -1,0 +1,8 @@
+D:\IJunior\sortingNumbers\bin\Debug\sortingNumbers.exe.config
+D:\IJunior\sortingNumbers\bin\Debug\sortingNumbers.exe
+D:\IJunior\sortingNumbers\bin\Debug\sortingNumbers.pdb
+D:\IJunior\sortingNumbers\obj\Debug\sortingNumbers.csproj.AssemblyReference.cache
+D:\IJunior\sortingNumbers\obj\Debug\sortingNumbers.csproj.SuggestedBindingRedirects.cache
+D:\IJunior\sortingNumbers\obj\Debug\sortingNumbers.csproj.CoreCompileInputs.cache
+D:\IJunior\sortingNumbers\obj\Debug\sortingNumbers.exe
+D:\IJunior\sortingNumbers\obj\Debug\sortingNumbers.pdb
