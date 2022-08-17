@@ -1,0 +1,8 @@
+D:\IJunior\split\bin\Debug\split.exe.config
+D:\IJunior\split\bin\Debug\split.exe
+D:\IJunior\split\bin\Debug\split.pdb
+D:\IJunior\split\obj\Debug\split.csproj.AssemblyReference.cache
+D:\IJunior\split\obj\Debug\split.csproj.SuggestedBindingRedirects.cache
+D:\IJunior\split\obj\Debug\split.csproj.CoreCompileInputs.cache
+D:\IJunior\split\obj\Debug\split.exe
+D:\IJunior\split\obj\Debug\split.pdb
