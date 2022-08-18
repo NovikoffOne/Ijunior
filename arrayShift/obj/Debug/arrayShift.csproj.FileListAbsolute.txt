@@ -1,0 +1,8 @@
+D:\IJunior\arrayShift\bin\Debug\arrayShift.exe.config
+D:\IJunior\arrayShift\bin\Debug\arrayShift.exe
+D:\IJunior\arrayShift\bin\Debug\arrayShift.pdb
+D:\IJunior\arrayShift\obj\Debug\arrayShift.csproj.AssemblyReference.cache
+D:\IJunior\arrayShift\obj\Debug\arrayShift.csproj.SuggestedBindingRedirects.cache
+D:\IJunior\arrayShift\obj\Debug\arrayShift.csproj.CoreCompileInputs.cache
+D:\IJunior\arrayShift\obj\Debug\arrayShift.exe
+D:\IJunior\arrayShift\obj\Debug\arrayShift.pdb
