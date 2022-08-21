@@ -1,0 +1,8 @@
+D:\IJunior\personelAccounting\bin\Debug\personelAccounting.exe.config
+D:\IJunior\personelAccounting\bin\Debug\personelAccounting.exe
+D:\IJunior\personelAccounting\bin\Debug\personelAccounting.pdb
+D:\IJunior\personelAccounting\obj\Debug\personelAccounting.csproj.AssemblyReference.cache
+D:\IJunior\personelAccounting\obj\Debug\personelAccounting.csproj.SuggestedBindingRedirects.cache
+D:\IJunior\personelAccounting\obj\Debug\personelAccounting.csproj.CoreCompileInputs.cache
+D:\IJunior\personelAccounting\obj\Debug\personelAccounting.exe
+D:\IJunior\personelAccounting\obj\Debug\personelAccounting.pdb
