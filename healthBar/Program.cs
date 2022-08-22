@@ -10,7 +10,7 @@ namespace healthBar
     {
         static void Main(string[] args)
         {
-            int value = 10;
+            int value = 4;
             int maxValue = 10;
             DrawBar(value, maxValue);
         }
@@ -20,27 +20,25 @@ namespace healthBar
             ConsoleColor defaultColor = Console.BackgroundColor;
 
             Console.SetCursorPosition(0, 0);
-            Console.BackgroundColor = color;
             Console.Write("[");
+            string bar = "";
+            Console.BackgroundColor = color;
+            
             for (int i = 0; i < value; i++)
             {
-                Console.Write('#');
-            }
-            Console.BackgroundColor = defaultColor;
-            Console.SetCursorPosition(value, 0);
-            for (int i = value; i < maxValue; i++)
-            {
-                if (i != maxValue - 1)
-                {
-                    Console.Write(' ');
-                }
-                else
-                {
-                    Console.Write(" " + ']');
-                }
-                
+                bar += " ";
             }
 
+            Console.Write(bar);
+            Console.BackgroundColor = defaultColor;
+            bar = "";
+
+            for (int i = value; i < maxValue; i++)
+            {
+                bar += ' ';
+            }
+            
+            Console.Write(bar + ']');
         }
     }
 }
