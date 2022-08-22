@@ -1,0 +1,8 @@
+D:\IJunior\healthBar\bin\Debug\healthBar.exe.config
+D:\IJunior\healthBar\bin\Debug\healthBar.exe
+D:\IJunior\healthBar\bin\Debug\healthBar.pdb
+D:\IJunior\healthBar\obj\Debug\healthBar.csproj.AssemblyReference.cache
+D:\IJunior\healthBar\obj\Debug\healthBar.csproj.SuggestedBindingRedirects.cache
+D:\IJunior\healthBar\obj\Debug\healthBar.csproj.CoreCompileInputs.cache
+D:\IJunior\healthBar\obj\Debug\healthBar.exe
+D:\IJunior\healthBar\obj\Debug\healthBar.pdb
