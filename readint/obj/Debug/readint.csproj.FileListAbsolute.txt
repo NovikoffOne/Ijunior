@@ -1,0 +1,8 @@
+D:\IJunior\readint\bin\Debug\readint.exe.config
+D:\IJunior\readint\bin\Debug\readint.exe
+D:\IJunior\readint\bin\Debug\readint.pdb
+D:\IJunior\readint\obj\Debug\readint.csproj.AssemblyReference.cache
+D:\IJunior\readint\obj\Debug\readint.csproj.SuggestedBindingRedirects.cache
+D:\IJunior\readint\obj\Debug\readint.csproj.CoreCompileInputs.cache
+D:\IJunior\readint\obj\Debug\readint.exe
+D:\IJunior\readint\obj\Debug\readint.pdb
