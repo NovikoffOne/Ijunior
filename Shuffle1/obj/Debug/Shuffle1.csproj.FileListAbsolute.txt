@@ -1,8 +1,0 @@
-D:\IJunior\Shuffle1\bin\Debug\Shuffle1.exe.config
-D:\IJunior\Shuffle1\bin\Debug\Shuffle1.exe
-D:\IJunior\Shuffle1\bin\Debug\Shuffle1.pdb
-D:\IJunior\Shuffle1\obj\Debug\Shuffle1.csproj.AssemblyReference.cache
-D:\IJunior\Shuffle1\obj\Debug\Shuffle1.csproj.SuggestedBindingRedirects.cache
-D:\IJunior\Shuffle1\obj\Debug\Shuffle1.csproj.CoreCompileInputs.cache
-D:\IJunior\Shuffle1\obj\Debug\Shuffle1.exe
-D:\IJunior\Shuffle1\obj\Debug\Shuffle1.pdb
