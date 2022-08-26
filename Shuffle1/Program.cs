@@ -21,12 +21,11 @@ namespace Shuffle1
         {
             int tempNumber;
             int randomIndex;
-            
+            Random random = new Random();
+
             for (int i = 0; i < array.Length; i++)
             {
-                Random random = new Random();
                 randomIndex = random.Next(0, array.Length);
-
                 tempNumber = array[i];
                 array[i] = array[randomIndex];
                 array[randomIndex] = tempNumber;
