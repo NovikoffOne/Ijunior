@@ -1,0 +1,8 @@
+D:\IJunior\module2\explanatoryDictionary\bin\Debug\explanatoryDictionary.exe.config
+D:\IJunior\module2\explanatoryDictionary\bin\Debug\explanatoryDictionary.exe
+D:\IJunior\module2\explanatoryDictionary\bin\Debug\explanatoryDictionary.pdb
+D:\IJunior\module2\explanatoryDictionary\obj\Debug\explanatoryDictionary.csproj.AssemblyReference.cache
+D:\IJunior\module2\explanatoryDictionary\obj\Debug\explanatoryDictionary.csproj.SuggestedBindingRedirects.cache
+D:\IJunior\module2\explanatoryDictionary\obj\Debug\explanatoryDictionary.csproj.CoreCompileInputs.cache
+D:\IJunior\module2\explanatoryDictionary\obj\Debug\explanatoryDictionary.exe
+D:\IJunior\module2\explanatoryDictionary\obj\Debug\explanatoryDictionary.pdb
