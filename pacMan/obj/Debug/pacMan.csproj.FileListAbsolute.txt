@@ -1,0 +1,8 @@
+D:\IJunior\shlak\pacMan\bin\Debug\pacMan.exe.config
+D:\IJunior\shlak\pacMan\bin\Debug\pacMan.exe
+D:\IJunior\shlak\pacMan\bin\Debug\pacMan.pdb
+D:\IJunior\shlak\pacMan\obj\Debug\pacMan.csproj.AssemblyReference.cache
+D:\IJunior\shlak\pacMan\obj\Debug\pacMan.csproj.SuggestedBindingRedirects.cache
+D:\IJunior\shlak\pacMan\obj\Debug\pacMan.csproj.CoreCompileInputs.cache
+D:\IJunior\shlak\pacMan\obj\Debug\pacMan.exe
+D:\IJunior\shlak\pacMan\obj\Debug\pacMan.pdb
