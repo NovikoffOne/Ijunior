@@ -15,33 +15,38 @@ namespace personelAccounting
 
             int index = 0;
             bool isWork = true;
-            string userInput;
+            int userInput;
             
             while (isWork)
             {
                 DrawMenu();
 
-                userInput = ProcessingInput();
-                
+                userInput = Convert.ToInt32(ProcessInput());
+
+                const int addDossier = 1;
+                const int drawDossier = 2;
+                const int deletedDossier = 3;
+                const int searchLastName = 4;
+                const int exit = 5;
+
                 switch (userInput)
                 {
-                    case "1":
+                    case addDossier:
                         AddDossierСonclusion(ref fullNameArray, ref jobTitleArray);
                         break;
-
-                    case "2":
+                    case drawDossier:
                         DrawDossier(fullNameArray, jobTitleArray);
                         break;
 
-                    case "3":
-                        DeleteDossierСonclusion(ref index, ref fullNameArray, ref jobTitleArray);
+                    case deletedDossier:
+                        DeleteDossierСonclusion(ref index, fullNameArray, jobTitleArray);
                         break;
 
-                    case "4":
-                        SearchLastNameСonclusion(ref fullNameArray, ref jobTitleArray);
+                    case searchLastName:
+                        SearchLastNameСonclusion(fullNameArray, jobTitleArray);
                         break;
 
-                    case "5":
+                    case exit:
                         Exit(ref isWork);
                         break;
                 }
@@ -61,7 +66,7 @@ namespace personelAccounting
             Console.SetCursorPosition(0, 0);
         }
 
-        static string ProcessingInput()
+        static string ProcessInput()
         {
             string userInput;
             Console.Write("Выберите пункт : ");
@@ -182,14 +187,14 @@ namespace personelAccounting
             jobTitleArray = AddDossier(jobTitleArray, jobTitle);
         }
 
-        static void DeleteDossierСonclusion(ref int index, ref string[] fullNameArray, ref string[] jobTitleArray)
+        static void DeleteDossierСonclusion(ref int index, string[] fullNameArray, string[] jobTitleArray)
         {
             index = GetIndex();
             fullNameArray = DeleteDossier(fullNameArray, index);
             jobTitleArray = DeleteDossier(jobTitleArray, index);
         }
 
-        static void SearchLastNameСonclusion(ref string[] fullNameArray, ref string[] jobTitleArray)
+        static void SearchLastNameСonclusion(string[] fullNameArray, string[] jobTitleArray)
         {
             string foundDossier;
             string lastName = GetLastName();
