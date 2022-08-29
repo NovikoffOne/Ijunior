@@ -1,0 +1,8 @@
+D:\IJunior\module2\upPersonnelAccounting\bin\Debug\upPersonnelAccounting.exe.config
+D:\IJunior\module2\upPersonnelAccounting\bin\Debug\upPersonnelAccounting.exe
+D:\IJunior\module2\upPersonnelAccounting\bin\Debug\upPersonnelAccounting.pdb
+D:\IJunior\module2\upPersonnelAccounting\obj\Debug\upPersonnelAccounting.csproj.AssemblyReference.cache
+D:\IJunior\module2\upPersonnelAccounting\obj\Debug\upPersonnelAccounting.csproj.SuggestedBindingRedirects.cache
+D:\IJunior\module2\upPersonnelAccounting\obj\Debug\upPersonnelAccounting.csproj.CoreCompileInputs.cache
+D:\IJunior\module2\upPersonnelAccounting\obj\Debug\upPersonnelAccounting.exe
+D:\IJunior\module2\upPersonnelAccounting\obj\Debug\upPersonnelAccounting.pdb
