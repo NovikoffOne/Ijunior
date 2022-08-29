@@ -1,0 +1,8 @@
+D:\IJunior\module2\queueToTheStore\bin\Debug\queueToTheStore.exe.config
+D:\IJunior\module2\queueToTheStore\bin\Debug\queueToTheStore.exe
+D:\IJunior\module2\queueToTheStore\bin\Debug\queueToTheStore.pdb
+D:\IJunior\module2\queueToTheStore\obj\Debug\queueToTheStore.csproj.AssemblyReference.cache
+D:\IJunior\module2\queueToTheStore\obj\Debug\queueToTheStore.csproj.SuggestedBindingRedirects.cache
+D:\IJunior\module2\queueToTheStore\obj\Debug\queueToTheStore.csproj.CoreCompileInputs.cache
+D:\IJunior\module2\queueToTheStore\obj\Debug\queueToTheStore.exe
+D:\IJunior\module2\queueToTheStore\obj\Debug\queueToTheStore.pdb
