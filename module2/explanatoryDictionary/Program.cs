@@ -12,6 +12,7 @@ namespace explanatoryDictionary
         {
             bool isWork = true;
             Dictionary<string, string> explanatoryDictionary = new Dictionary<string, string>();
+
             explanatoryDictionary.Add("Абдоминопластика", "Косметическая операция в области живота, формирование талии.");
             explanatoryDictionary.Add("Аберрация", "Искажение наблюдаемых явлений, отход от истинности.");
             explanatoryDictionary.Add("Абстиненция", "Строгое воздержание от секса, алкоголя, табака и т.д. вызванное комплексами.");
@@ -30,10 +31,11 @@ namespace explanatoryDictionary
         static void SearchWord(Dictionary<string, string> wordDictionary, ref bool isWork)
         {
             string userInput;
-            
+            string exit = "exit";
+
             Console.Write("Введите слово : ");
             userInput = Console.ReadLine();
-
+            
             if (wordDictionary.ContainsKey(userInput))
             {
                 foreach (var item in wordDictionary)
@@ -44,7 +46,7 @@ namespace explanatoryDictionary
                     }
                 }
             }
-            else if (userInput == "exit")
+            else if (userInput == exit)
             {
                 Console.WriteLine("Досвидания!!!");
                 Console.ReadKey();
