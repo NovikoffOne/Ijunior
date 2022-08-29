@@ -23,30 +23,30 @@ namespace personelAccounting
 
                 userInput = Convert.ToInt32(ProcessInput());
 
-                const int addDossier = 1;
-                const int drawDossier = 2;
-                const int deletedDossier = 3;
-                const int searchLastName = 4;
-                const int exit = 5;
+                const int Add = 1;
+                const int DrawDossiers = 2;
+                const int DeletedDossiers = 3;
+                const int SearchNamesakes = 4;
+                const int Out = 5;
 
                 switch (userInput)
                 {
-                    case addDossier:
+                    case Add:
                         AddDossierСonclusion(ref fullNameArray, ref jobTitleArray);
                         break;
-                    case drawDossier:
+                    case DrawDossiers:
                         DrawDossier(fullNameArray, jobTitleArray);
                         break;
 
-                    case deletedDossier:
+                    case DeletedDossiers:
                         DeleteDossierСonclusion(ref index, fullNameArray, jobTitleArray);
                         break;
 
-                    case searchLastName:
-                        SearchLastNameСonclusion(fullNameArray, jobTitleArray);
+                    case SearchNamesakes:
+                        SearchNamesakesСonclusion(fullNameArray, jobTitleArray);
                         break;
 
-                    case exit:
+                    case Out:
                         Exit(ref isWork);
                         break;
                 }
@@ -155,7 +155,7 @@ namespace personelAccounting
             return lastName;
         }
 
-        static string SearchLastName(string[] fullNameArray, string[] jobTitleArray, string lastName)
+        static string SearchNamesakes(string[] fullNameArray, string[] jobTitleArray, string lastName)
         {
             int index = 0;
  
@@ -194,11 +194,12 @@ namespace personelAccounting
             jobTitleArray = DeleteDossier(jobTitleArray, index);
         }
 
-        static void SearchLastNameСonclusion(string[] fullNameArray, string[] jobTitleArray)
+        static void SearchNamesakesСonclusion(string[] fullNameArray, string[] jobTitleArray)
         {
             string foundDossier;
             string lastName = GetLastName();
-            foundDossier = SearchLastName(fullNameArray, jobTitleArray, lastName);
+            foundDossier = SearchNamesakes(fullNameArray, jobTitleArray, lastName);
+
             Console.WriteLine(foundDossier);
             Console.ReadKey();
         }
