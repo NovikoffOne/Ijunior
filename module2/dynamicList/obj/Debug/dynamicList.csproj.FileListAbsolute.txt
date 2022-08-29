@@ -1,0 +1,8 @@
+D:\IJunior\module2\dynamicList\bin\Debug\dynamicList.exe.config
+D:\IJunior\module2\dynamicList\bin\Debug\dynamicList.exe
+D:\IJunior\module2\dynamicList\bin\Debug\dynamicList.pdb
+D:\IJunior\module2\dynamicList\obj\Debug\dynamicList.csproj.AssemblyReference.cache
+D:\IJunior\module2\dynamicList\obj\Debug\dynamicList.csproj.SuggestedBindingRedirects.cache
+D:\IJunior\module2\dynamicList\obj\Debug\dynamicList.csproj.CoreCompileInputs.cache
+D:\IJunior\module2\dynamicList\obj\Debug\dynamicList.exe
+D:\IJunior\module2\dynamicList\obj\Debug\dynamicList.pdb
