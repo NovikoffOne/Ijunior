@@ -17,8 +17,7 @@ namespace dynamicList
             {
                 const string Sum = "sum";
                 const string Exit = "exit";
-                int number;
-
+                
                 DrawMenu();
 
                 string userInput = Console.ReadLine();
@@ -26,8 +25,7 @@ namespace dynamicList
                 switch (userInput.ToLower())
                 {
                     case Sum:
-                        Console.WriteLine("Сумма всех чисел равна - " + Summarize(numbers));
-                        Console.ReadKey();
+                        Summarize(numbers);
                         break;
 
                     case Exit:
@@ -35,15 +33,7 @@ namespace dynamicList
                         break;
 
                     default:
-                        if (int.TryParse(userInput, out number))
-                        {
-                            numbers.Add(number);
-                        }
-                        else
-                        {
-                            Console.WriteLine("Попробуйте еще раз");
-                            Console.ReadKey();
-                        }
+                        AddNumbers(userInput, numbers);
                         break;
                 }
 
@@ -68,7 +58,7 @@ namespace dynamicList
             isWork = false;
         }
 
-        static int Summarize(List<int> numbers)
+        static void Summarize(List<int> numbers)
         {
             int sum = 0;
 
@@ -76,8 +66,24 @@ namespace dynamicList
             {
                 sum += number;
             }
-            
-            return sum;
+
+            Console.WriteLine("Сумма всех чисел равна - " + sum);
+            Console.ReadKey();
+        }
+
+        static void AddNumbers(string userInput, List<int> numbers)
+        {
+            int number;
+
+            if (int.TryParse(userInput, out number))
+            {
+                numbers.Add(number);
+            }
+            else
+            {
+                Console.WriteLine("Попробуйте еще раз");
+                Console.ReadKey();
+            }
         }
     }
 }
