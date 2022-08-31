@@ -11,3 +11,6 @@ D:\IJunior\module1\personelAccounting\obj\Debug\personelAccounting.csproj.Sugges
 D:\IJunior\module1\personelAccounting\obj\Debug\personelAccounting.csproj.CoreCompileInputs.cache
 D:\IJunior\module1\personelAccounting\obj\Debug\personelAccounting.exe
 D:\IJunior\module1\personelAccounting\obj\Debug\personelAccounting.pdb
+D:\IJunior\module1\personelAccounting\bin\Debug\personelAccounting.exe.config
+D:\IJunior\module1\personelAccounting\bin\Debug\personelAccounting.exe
+D:\IJunior\module1\personelAccounting\bin\Debug\personelAccounting.pdb

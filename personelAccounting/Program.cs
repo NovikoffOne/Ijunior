@@ -19,15 +19,15 @@ namespace personelAccounting
             
             while (isWork)
             {
-                DrawMenu();
-
-                userInput = Convert.ToInt32(ProcessInput());
-
                 const int Add = 1;
                 const int DrawDossiers = 2;
                 const int DeletedDossiers = 3;
                 const int SearchNamesakes = 4;
                 const int Out = 5;
+
+                DrawMenu(Add, DrawDossiers, DeletedDossiers, SearchNamesakes, Out);
+
+                userInput = Convert.ToInt32(ProcessInput());
 
                 switch (userInput)
                 {
@@ -55,14 +55,14 @@ namespace personelAccounting
             }
         }
 
-        static void DrawMenu()
+        static void DrawMenu(int Add, int DrawDossiers, int DeletedDossiers, int SearchNamesakes, int Out)
         {
             Console.SetCursorPosition(0, 20);
-            Console.WriteLine("1. Добавить досье\n" +
-                "2. Вывести все досье\n" +
-                "3. Удалить досье\n" +
-                "4. Поиск по фамилии\n" +
-                "5. Выход");
+            Console.WriteLine($"{Add}. Добавить досье\n" +
+                $"{DrawDossiers}. Вывести все досье\n" +
+                $"{DeletedDossiers}. Удалить досье\n" +
+                $"{SearchNamesakes}. Поиск по фамилии\n" +
+                $"{Out}. Выход");
             Console.SetCursorPosition(0, 0);
         }
 
@@ -158,6 +158,7 @@ namespace personelAccounting
         static string SearchNamesakes(string[] fullNameArray, string[] jobTitleArray, string lastName)
         {
             int index = 0;
+            string[] Namesakes = new string[5];
  
             for (int i = 0; i < fullNameArray.Length; i++)
             {
