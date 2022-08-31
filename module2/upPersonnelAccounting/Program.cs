@@ -23,31 +23,31 @@ namespace upPersonnelAccounting
             
             while (isWork)
             {
-                SelectItem(ref userInput, dossier, ref isWork);
+                Work(ref userInput, dossier, ref isWork);
                 Console.Clear();
             }
         }
 
-        static void DrawMenu()
+        static void DrawMenu(int AddingDossier, int WithdrawDossiers, int DeleteDossiers, int Exit)
         {
             Console.WriteLine
                 
-                ("1 - Добавить досье.\n" +
-                "2 - Выести все досье.\n" +
-                "3 - Удалить досье.\n" +
-                "4 - Выход.\n");
+                ($"{AddingDossier} - Добавить досье.\n" +
+                $"{WithdrawDossiers} - Выести все досье.\n" +
+                $"{DeleteDossiers} - Удалить досье.\n" +
+                $"{Exit} - Выход.");
         }
 
-        static void SelectItem(ref int userInput, Dictionary<string, string> dossier, ref bool isWork)
+        static void Work(ref int userInput, Dictionary<string, string> dossier, ref bool isWork)
         {
-            DrawMenu();
-
-            userInput = Convert.ToInt32(Console.ReadLine());
-
             const int AddingDossier = 1;
             const int WithdrawDossiers = 2;
             const int DeleteDossiers = 3;
             const int Exit = 4;
+
+            DrawMenu(AddingDossier, WithdrawDossiers, DeleteDossiers, Exit);
+
+            userInput = Convert.ToInt32(Console.ReadLine());
 
             switch (userInput)
             {
@@ -65,7 +65,7 @@ namespace upPersonnelAccounting
                     break;
 
                 case Exit:
-                    Out(ref isWork);
+                    ExitProgramm(ref isWork);
                     break;
 
                 default:
@@ -76,20 +76,25 @@ namespace upPersonnelAccounting
 
         static void AddDossier(Dictionary<string, string> dossiers)
         {
-            string name;
-            string job;
-
             Console.Write("Введите ФИО : ");
-            name = Console.ReadLine();
+            string name = Console.ReadLine();
             Console.Clear();
 
             Console.Write("Введите професию : ");
-            job = Console.ReadLine();
+            string job = Console.ReadLine();
             Console.Clear();
 
-            dossiers.Add(name, job);
-            Console.WriteLine("Добавлено!");
-            Console.ReadKey();
+            if (!dossiers.ContainsKey(name))
+            {
+                dossiers.Add(name, job);
+                Console.WriteLine("Добавлено!");
+                Console.ReadKey();
+            }
+            else
+            {
+                Console.WriteLine("Такое досье уже добавленно");
+                Console.ReadKey();
+            }
         }
 
         static void ShowDossier(Dictionary<string, string> dossiers)
@@ -102,14 +107,20 @@ namespace upPersonnelAccounting
 
         static void RemoveDossier(Dictionary<string,string> dossier)
         {
-            string userInput;
-
             Console.Write("Введите ФИО, которое хотите удалить : ");
-            userInput = Console.ReadLine();
-            dossier.Remove(userInput);
+            string userInput = Console.ReadLine();
+
+            if (dossier.ContainsKey(userInput))
+            {
+                dossier.Remove(userInput);
+            }
+            else
+            {
+                Console.WriteLine("Такого досье - несуществует!!!");
+            }
         }
 
-        static void Out(ref bool isWork)
+        static void ExitProgramm(ref bool isWork)
         {
             Console.WriteLine("Довстречи!!!");
             Console.ReadKey();
