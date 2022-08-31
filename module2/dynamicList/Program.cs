@@ -15,9 +15,37 @@ namespace dynamicList
 
             while (isWork)
             {
+                const string Sum = "sum";
+                const string Exit = "exit";
+                int number;
+
                 DrawMenu();
 
-                ManageList(numbers, ref isWork);
+                string userInput = Console.ReadLine();
+
+                switch (userInput.ToLower())
+                {
+                    case Sum:
+                        Console.WriteLine("Сумма всех чисел равна - " + Summarize(numbers));
+                        Console.ReadKey();
+                        break;
+
+                    case Exit:
+                        ExitProgramm(ref isWork);
+                        break;
+
+                    default:
+                        if (int.TryParse(userInput, out number))
+                        {
+                            numbers.Add(number);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Попробуйте еще раз");
+                            Console.ReadKey();
+                        }
+                        break;
+                }
 
                 Console.Clear();
             }
@@ -32,29 +60,24 @@ namespace dynamicList
             Console.SetCursorPosition(0, 0);
         }
 
-        static void ManageList(List<int> numbers, ref bool isWork)
+        static void ExitProgramm(ref bool isWork)
         {
-            string userInput;
-            const string Sum = "sum";
-            const string Exit = "exit";
+            Console.WriteLine("Досвидания!!!");
+            Console.ReadKey();
 
-            userInput = Console.ReadLine();
+            isWork = false;
+        }
 
-            switch (userInput.ToLower())
+        static int Summarize(List<int> numbers)
+        {
+            int sum = 0;
+
+            foreach(int number in numbers)
             {
-                case Sum:
-                    Console.WriteLine("Сумма всех чисел равна - " + numbers.Sum());
-                    Console.ReadKey();
-                    break;
-
-                case Exit:
-                    isWork = false;
-                    break;
-
-                default:
-                    numbers.Add(Convert.ToInt32(userInput));
-                    break;
+                sum += number;
             }
+            
+            return sum;
         }
     }
 }
