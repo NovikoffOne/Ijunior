@@ -1,0 +1,8 @@
+D:\IJunior\module2\UnionOfArrays\bin\Debug\UnionOfArrays.exe.config
+D:\IJunior\module2\UnionOfArrays\bin\Debug\UnionOfArrays.exe
+D:\IJunior\module2\UnionOfArrays\bin\Debug\UnionOfArrays.pdb
+D:\IJunior\module2\UnionOfArrays\obj\Debug\UnionOfArrays.csproj.AssemblyReference.cache
+D:\IJunior\module2\UnionOfArrays\obj\Debug\UnionOfArrays.csproj.SuggestedBindingRedirects.cache
+D:\IJunior\module2\UnionOfArrays\obj\Debug\UnionOfArrays.csproj.CoreCompileInputs.cache
+D:\IJunior\module2\UnionOfArrays\obj\Debug\UnionOfArrays.exe
+D:\IJunior\module2\UnionOfArrays\obj\Debug\UnionOfArrays.pdb
