@@ -35,16 +35,11 @@ namespace explanatoryDictionary
 
             Console.Write("Введите слово : ");
             userInput = Console.ReadLine();
-            
+
             if (wordDictionary.ContainsKey(userInput))
             {
-                foreach (var item in wordDictionary)
-                {
-                    if (item.Key.ToLower() == userInput.ToLower())
-                    {
-                        Console.WriteLine($"{item.Key} - {item.Value}");
-                    }
-                }
+                Console.WriteLine($"{userInput} - {wordDictionary[userInput]}");
+                Console.ReadKey();
             }
             else if (userInput == exit)
             {
