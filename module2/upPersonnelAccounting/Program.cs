@@ -57,7 +57,6 @@ namespace upPersonnelAccounting
                 
                 case WithdrawDossiers:
                     ShowDossier(dossier);
-                    Console.ReadKey();
                     break;
                 
                 case DeleteDossiers:
@@ -103,6 +102,8 @@ namespace upPersonnelAccounting
             {
                 Console.Write($"{item.Key} - {item.Value}, ");
             }
+
+            Console.ReadKey();
         }
 
         static void RemoveDossier(Dictionary<string,string> dossier)
