@@ -10,22 +10,22 @@ namespace personelAccounting
     {
         static void Main(string[] args)
         {
-            string[] fullNameArray = new string[] {"Новиков Иван Олегович", "Назаренко Илья Александрович", "Солодяникна Елаена Егоровна"};
-            string[] jobTitleArray = new string[] {"Фрезировщик", "Менеджер", "Директор"};
+            string[] fullNameArray = new string[] { "Новиков Иван Олегович", "Назаренко Илья Александрович", "Солодяникна Елаена Егоровна" };
+            string[] jobTitleArray = new string[] { "Фрезировщик", "Менеджер", "Директор" };
 
             int index = 0;
             bool isWork = true;
             int userInput;
-            
+
             while (isWork)
             {
                 const int Add = 1;
                 const int DrawDossiers = 2;
                 const int DeletedDossiers = 3;
                 const int SearchNamesakes = 4;
-                const int Out = 5;
+                const int ExitProgramm = 5;
 
-                DrawMenu(Add, DrawDossiers, DeletedDossiers, SearchNamesakes, Out);
+                DrawMenu(Add, DrawDossiers, DeletedDossiers, SearchNamesakes, ExitProgramm);
 
                 userInput = Convert.ToInt32(ProcessInput());
 
@@ -43,11 +43,15 @@ namespace personelAccounting
                         break;
 
                     case SearchNamesakes:
-                        SearchNamesakesСonclusion(fullNameArray, jobTitleArray);
+                        SearchSecondName(fullNameArray);
                         break;
 
-                    case Out:
+                    case ExitProgramm:
                         Exit(ref isWork);
+                        break;
+
+                    default:
+                        Default();
                         break;
                 }
 
@@ -55,20 +59,21 @@ namespace personelAccounting
             }
         }
 
-        static void DrawMenu(int Add, int DrawDossiers, int DeletedDossiers, int SearchNamesakes, int Out)
+        static void DrawMenu(int Add, int DrawDossiers, int DeletedDossiers, int SearchNamesakes, int ExitProgramm)
         {
             Console.SetCursorPosition(0, 20);
             Console.WriteLine($"{Add}. Добавить досье\n" +
                 $"{DrawDossiers}. Вывести все досье\n" +
                 $"{DeletedDossiers}. Удалить досье\n" +
                 $"{SearchNamesakes}. Поиск по фамилии\n" +
-                $"{Out}. Выход");
+                $"{ExitProgramm}. Выход");
             Console.SetCursorPosition(0, 0);
         }
 
         static string ProcessInput()
         {
             string userInput;
+
             Console.Write("Выберите пункт : ");
             return userInput = Console.ReadLine();
         }
@@ -98,7 +103,7 @@ namespace personelAccounting
 
             tempArray[array.Length] = name;
             array = tempArray;
-            
+
             return array;
         }
 
@@ -108,13 +113,13 @@ namespace personelAccounting
             for (int i = 0; i < fullNameArray.Length; i++)
             {
                 Console.Write($"{i + 1}. {fullNameArray[i]} {jobTitleArray[i]}");
-                
+
                 if (i != fullNameArray.Length - 1)
                 {
                     Console.Write(" - ");
                 }
             }
-            
+
             Console.ReadKey();
         }
 
@@ -138,7 +143,7 @@ namespace personelAccounting
             {
                 tempArray[i] = array[i];
             }
-            
+
             for (int i = index; i < tempArray.Length; i++)
             {
                 tempArray[i] = array[i + 1];
@@ -155,28 +160,28 @@ namespace personelAccounting
             return lastName;
         }
 
-        static string SearchNamesakes(string[] fullNameArray, string[] jobTitleArray, string lastName)
+        static void SearchSecondName(string[] fullNameArray)
         {
-            int index = 0;
-            string[] Namesakes = new string[5];
- 
+            string lastName = GetLastName();
+
             for (int i = 0; i < fullNameArray.Length; i++)
             {
                 string[] tempArray = fullNameArray[i].Split(' ');
-                
+
                 if (tempArray[0].ToLower() == lastName.ToLower())
                 {
-                    index = i;
+                    Console.WriteLine(fullNameArray[i]);
                 }
             }
 
-            return $"{fullNameArray[index]} {jobTitleArray[index]}";
+            Console.ReadKey();
         }
 
         static void Exit(ref bool isWork)
         {
             Console.WriteLine("До свидания!");
             Console.ReadKey();
+
             isWork = false;
         }
 
@@ -184,6 +189,7 @@ namespace personelAccounting
         {
             string fullName = GetFullName();
             string jobTitle = GetJobtitle();
+
             fullNameArray = AddDossier(fullNameArray, fullName);
             jobTitleArray = AddDossier(jobTitleArray, jobTitle);
         }
@@ -191,17 +197,14 @@ namespace personelAccounting
         static void DeleteDossierСonclusion(ref int index, string[] fullNameArray, string[] jobTitleArray)
         {
             index = GetIndex();
+
             fullNameArray = DeleteDossier(fullNameArray, index);
             jobTitleArray = DeleteDossier(jobTitleArray, index);
         }
 
-        static void SearchNamesakesСonclusion(string[] fullNameArray, string[] jobTitleArray)
+        static void Default()
         {
-            string foundDossier;
-            string lastName = GetLastName();
-            foundDossier = SearchNamesakes(fullNameArray, jobTitleArray, lastName);
-
-            Console.WriteLine(foundDossier);
+            Console.WriteLine("Попробуйте еще раз!");
             Console.ReadKey();
         }
     }
