@@ -83,7 +83,7 @@ namespace upPersonnelAccounting
             string job = Console.ReadLine();
             Console.Clear();
 
-            if (!dossiers.ContainsKey(name))
+            if (dossiers.ContainsKey(name) == false)
             {
                 dossiers.Add(name, job);
                 Console.WriteLine("Добавлено!");
@@ -98,9 +98,9 @@ namespace upPersonnelAccounting
 
         static void ShowDossier(Dictionary<string, string> dossiers)
         {
-            foreach (var item in dossiers)
+            foreach (var dossier in dossiers)
             {
-                Console.Write($"{item.Key} - {item.Value}, ");
+                Console.Write($"{dossier.Key} - {dossier.Value}, ");
             }
 
             Console.ReadKey();
