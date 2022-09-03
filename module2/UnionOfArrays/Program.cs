@@ -23,17 +23,17 @@ namespace UnionOfArrays
         {
             List<string> tempNumbers = new List<string>(array1);
 
-            foreach (string item in array2)
+            foreach (string number in array2)
             {
-                if (!tempNumbers.Contains(item))
+                if (!tempNumbers.Contains(number))
                 {
-                    tempNumbers.Add(item);
+                    tempNumbers.Add(number);
                 }
             }
 
             for (int i = 0; i < tempNumbers.Count; i++)
             {
-                if (!unionNumbers.Contains(tempNumbers[i]))
+                if (unionNumbers.Contains(tempNumbers[i]) == false)
                 {
                     unionNumbers.Add(tempNumbers[i]);
                 }
