@@ -1,0 +1,8 @@
+D:\IJunior\module2\workProprties\bin\Debug\workProprties.exe.config
+D:\IJunior\module2\workProprties\bin\Debug\workProprties.exe
+D:\IJunior\module2\workProprties\bin\Debug\workProprties.pdb
+D:\IJunior\module2\workProprties\obj\Debug\workProprties.csproj.AssemblyReference.cache
+D:\IJunior\module2\workProprties\obj\Debug\workProprties.csproj.SuggestedBindingRedirects.cache
+D:\IJunior\module2\workProprties\obj\Debug\workProprties.csproj.CoreCompileInputs.cache
+D:\IJunior\module2\workProprties\obj\Debug\workProprties.exe
+D:\IJunior\module2\workProprties\obj\Debug\workProprties.pdb
