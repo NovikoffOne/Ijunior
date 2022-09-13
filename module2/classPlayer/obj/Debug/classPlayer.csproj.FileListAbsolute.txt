@@ -1,0 +1,8 @@
+D:\IJunior\module2\classPlayer\bin\Debug\classPlayer.exe.config
+D:\IJunior\module2\classPlayer\bin\Debug\classPlayer.exe
+D:\IJunior\module2\classPlayer\bin\Debug\classPlayer.pdb
+D:\IJunior\module2\classPlayer\obj\Debug\classPlayer.csproj.AssemblyReference.cache
+D:\IJunior\module2\classPlayer\obj\Debug\classPlayer.csproj.SuggestedBindingRedirects.cache
+D:\IJunior\module2\classPlayer\obj\Debug\classPlayer.csproj.CoreCompileInputs.cache
+D:\IJunior\module2\classPlayer\obj\Debug\classPlayer.exe
+D:\IJunior\module2\classPlayer\obj\Debug\classPlayer.pdb
