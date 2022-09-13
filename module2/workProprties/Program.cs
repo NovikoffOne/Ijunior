@@ -11,15 +11,15 @@ namespace workProprties
         static void Main(string[] args)
         {
             Player player = new Player(3,8, '#');
-            Render render = new Render();
+            Renderer render = new Renderer();
 
-            render.DrawPlayer(player.X, player.Y, player.IconPlayer);
+            render.DrawPlayer(player.XCoordinate, player.YCoordinate, player.IconPlayer);
         }
 
         class Player
         {
-            private int _x;
-            private int _y;
+            private int _xCoordinate;
+            private int _yCoordinate;
             private char _iconPlayer;
 
             public char IconPlayer
@@ -32,41 +32,41 @@ namespace workProprties
                 {}
             }
 
-            public int X
+            public int XCoordinate
             {
                 get
                 {
-                    return _x;
+                    return _xCoordinate;
                 }
                 private set
                 {
                 }
             }
 
-            public int Y
+            public int YCoordinate
             {
                 get
                 {
-                    return _y;
+                    return _yCoordinate;
                 }
                 private set
                 {
                 }
             }
 
-            public Player(int x, int y, char iconPlayer)
+            public Player(int xCoordinate, int yCoordinate, char iconPlayer)
             {
-                _x = x;
-                _y = y;
+                _xCoordinate = xCoordinate;
+                _yCoordinate = yCoordinate;
                 _iconPlayer = iconPlayer;
             }
         }
 
-        class Render
+        class Renderer
         {
-            public void DrawPlayer(int x, int y, char iconPlayer='@')
+            public void DrawPlayer(int xCoordinate, int yCoordinate, char iconPlayer='@')
             {
-                Console.SetCursorPosition(x, y);
+                Console.SetCursorPosition(xCoordinate, yCoordinate);
                 Console.WriteLine(iconPlayer);
             }
         }
