@@ -11,9 +11,9 @@ namespace workProprties
         static void Main(string[] args)
         {
             Player player = new Player(3,8, '#');
-            Renderer render = new Renderer();
+            Renderer renderer = new Renderer();
 
-            render.Draw(player.XCoordinate, player.YCoordinate, player.Icon);
+            renderer.Render(player.XCoordinate, player.YCoordinate, player.Icon);
         }
     }
 
@@ -35,7 +35,7 @@ namespace workProprties
 
     class Renderer
     {
-        public void Draw(int xCoordinate, int yCoordinate, char iconPlayer = '@')
+        public void Render(int xCoordinate, int yCoordinate, char iconPlayer = '@')
         {
             Console.SetCursorPosition(xCoordinate, yCoordinate);
             Console.WriteLine(iconPlayer);
