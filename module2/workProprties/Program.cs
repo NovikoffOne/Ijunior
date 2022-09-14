@@ -13,62 +13,32 @@ namespace workProprties
             Player player = new Player(3,8, '#');
             Renderer render = new Renderer();
 
-            render.DrawPlayer(player.XCoordinate, player.YCoordinate, player.IconPlayer);
+            render.Draw(player.XCoordinate, player.YCoordinate, player.Icon);
         }
+    }
 
-        class Player
+    class Player
+    {
+        public char Icon { get; private set; }
+
+        public int XCoordinate { get; private set; }
+
+        public int YCoordinate { get; private set; }
+
+        public Player(int xCoordinate, int yCoordinate, char iconPlayer)
         {
-            private int _xCoordinate;
-            private int _yCoordinate;
-            private char _iconPlayer;
-
-            public char IconPlayer
-            {
-                get
-                {
-                    return _iconPlayer;
-                }
-                private set 
-                {}
-            }
-
-            public int XCoordinate
-            {
-                get
-                {
-                    return _xCoordinate;
-                }
-                private set
-                {
-                }
-            }
-
-            public int YCoordinate
-            {
-                get
-                {
-                    return _yCoordinate;
-                }
-                private set
-                {
-                }
-            }
-
-            public Player(int xCoordinate, int yCoordinate, char iconPlayer)
-            {
-                _xCoordinate = xCoordinate;
-                _yCoordinate = yCoordinate;
-                _iconPlayer = iconPlayer;
-            }
+            XCoordinate = xCoordinate;
+            YCoordinate = yCoordinate;
+            Icon = iconPlayer;
         }
+    }
 
-        class Renderer
+    class Renderer
+    {
+        public void Draw(int xCoordinate, int yCoordinate, char iconPlayer = '@')
         {
-            public void DrawPlayer(int xCoordinate, int yCoordinate, char iconPlayer='@')
-            {
-                Console.SetCursorPosition(xCoordinate, yCoordinate);
-                Console.WriteLine(iconPlayer);
-            }
+            Console.SetCursorPosition(xCoordinate, yCoordinate);
+            Console.WriteLine(iconPlayer);
         }
     }
 }
