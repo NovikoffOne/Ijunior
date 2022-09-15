@@ -1,0 +1,8 @@
+D:\IJunior\module2\CardDeck\bin\Debug\CardDeck.exe.config
+D:\IJunior\module2\CardDeck\bin\Debug\CardDeck.exe
+D:\IJunior\module2\CardDeck\bin\Debug\CardDeck.pdb
+D:\IJunior\module2\CardDeck\obj\Debug\CardDeck.csproj.AssemblyReference.cache
+D:\IJunior\module2\CardDeck\obj\Debug\CardDeck.csproj.SuggestedBindingRedirects.cache
+D:\IJunior\module2\CardDeck\obj\Debug\CardDeck.csproj.CoreCompileInputs.cache
+D:\IJunior\module2\CardDeck\obj\Debug\CardDeck.exe
+D:\IJunior\module2\CardDeck\obj\Debug\CardDeck.pdb
