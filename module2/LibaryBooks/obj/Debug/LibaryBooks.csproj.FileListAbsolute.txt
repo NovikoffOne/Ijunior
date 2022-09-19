@@ -1,0 +1,8 @@
+D:\IJunior\module2\LibaryBooks\bin\Debug\LibaryBooks.exe.config
+D:\IJunior\module2\LibaryBooks\bin\Debug\LibaryBooks.exe
+D:\IJunior\module2\LibaryBooks\bin\Debug\LibaryBooks.pdb
+D:\IJunior\module2\LibaryBooks\obj\Debug\LibaryBooks.csproj.AssemblyReference.cache
+D:\IJunior\module2\LibaryBooks\obj\Debug\LibaryBooks.csproj.SuggestedBindingRedirects.cache
+D:\IJunior\module2\LibaryBooks\obj\Debug\LibaryBooks.csproj.CoreCompileInputs.cache
+D:\IJunior\module2\LibaryBooks\obj\Debug\LibaryBooks.exe
+D:\IJunior\module2\LibaryBooks\obj\Debug\LibaryBooks.pdb
