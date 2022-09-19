@@ -15,13 +15,13 @@ namespace playerDatabase
 
             while (isWork)
             {
-                const string AddPlayers = "1";
-                const string BanPlayers = "2";
-                const string UnbanPlayers = "3";
-                const string DeletePlayers = "4";
-                const string ShowInfo = "5";
-                const string ExitProgramm = "6";
-                const string ExitProgramm2 = "exit";
+                const string CommandAddPlayer = "1";
+                const string CommandBanPlayer = "2";
+                const string CommandUnbanPlayer = "3";
+                const string CommandDeletePlayer = "4";
+                const string CommandShowInfo = "5";
+                const string CommandExit = "6";
+                const string CommandExit2 = "exit";
 
                 DrawMenu();
 
@@ -29,28 +29,28 @@ namespace playerDatabase
 
                 switch (userInput)
                 {
-                    case AddPlayers:
+                    case CommandAddPlayer:
                         database.AddPlayer();
                         break;
 
-                    case BanPlayers:
+                    case CommandBanPlayer:
                         database.BanPlayer();
                         break;
 
-                    case UnbanPlayers:
+                    case CommandUnbanPlayer:
                         database.UnbanPlayer();
                         break;
 
-                    case DeletePlayers:
+                    case CommandDeletePlayer:
                         database.DeletePlayer();
                         break;
 
-                    case ShowInfo:
+                    case CommandShowInfo:
                         database.ShowInfo();
                         break;
 
-                    case ExitProgramm:
-                    case ExitProgramm2:
+                    case CommandExit:
+                    case CommandExit2:
                         Exit(isWork);
                         break;
                 }
@@ -60,7 +60,7 @@ namespace playerDatabase
             
         }
 
-        static void DrawMenu()
+        public static void DrawMenu()
         {
             Console.SetCursorPosition(0, 15);
             Console.WriteLine("Выберите пункт :\n" +
@@ -74,7 +74,7 @@ namespace playerDatabase
             Console.SetCursorPosition(0, 0);
         }
 
-        static void Exit(bool isWork)
+        public static void Exit(bool isWork)
         {
             Console.WriteLine("Прощайте!");
             Console.ReadKey();
@@ -84,7 +84,7 @@ namespace playerDatabase
 
     static class UserUtils
     {
-        public static int CheckInt()
+        public static int ReadInt()
         {
             if ((int.TryParse(Console.ReadLine(), out int number)) == false)
             {
@@ -103,21 +103,21 @@ namespace playerDatabase
         public int Number { get; private set; }
         public string Name { get; private set; }
         public int Level { get; private set; }
-        public bool Banned { get; private set; }
+        public bool IsBanned { get; private set; }
 
         public Player(string name, int level, int number, bool banned = false)
         {
             Name = name;
             Level = level;
             Number = number;
-            Banned = banned;
+            IsBanned = banned;
         }
 
         public void Ban()
         {
-            if (Banned == false)
+            if (IsBanned == false)
             {
-                Banned = true;
+                IsBanned = true;
                 Console.WriteLine("Игрок забанен.");
             }
             else
@@ -128,9 +128,9 @@ namespace playerDatabase
 
         public void Unban()
         {
-            if (Banned == true)
+            if (IsBanned == true)
             {
-                Banned = false;
+                IsBanned = false;
                 Console.WriteLine("Игрок разбанен.");
             }
             else
@@ -142,24 +142,24 @@ namespace playerDatabase
 
     class Database
     {
-        private Player[] _players;
+        private List<Player> _players;
 
         public Database()
         {
-            _players =  new Player[] {};
+            _players =  new List<Player>();
         }
 
-        public Player CreatePlayer()
+        private Player CreatePlayer()
         {
             Console.Write("Введите имя : ");
             string name = Console.ReadLine();
 
             Console.Write("Введите лвл : ");
 
-            int level = UserUtils.CheckInt();
+            int level = UserUtils.ReadInt();
 
             Console.Write("Введите порядковый номер : ");
-            int number = UserUtils.CheckInt();
+            int number = UserUtils.ReadInt();
             
             Player player = new Player(name, level, number);
 
@@ -168,21 +168,13 @@ namespace playerDatabase
 
         public void AddPlayer()
         {
-            Player[] tempPlayers = new Player[_players.Length + 1];
-
-            for (int i = 0; i < _players.Length; i++)
-            {
-                tempPlayers[i] = _players[i];
-            }
-
-            _players = tempPlayers;
-            _players[_players.Length - 1] = CreatePlayer();
+            _players.Add(CreatePlayer());
         }
 
         public void BanPlayer()
         {
             Console.Write("Введите номер игрока, которого хотите забанить : ");
-            int number = UserUtils.CheckInt();
+            int number = UserUtils.ReadInt();
 
             foreach (var player in _players)
             {
@@ -200,7 +192,7 @@ namespace playerDatabase
         public void UnbanPlayer()
         {
             Console.Write("Введите номер игрока, которого хотите разбанить : ");
-            int number = UserUtils.CheckInt();
+            int number = UserUtils.ReadInt();
 
             foreach (var player in _players)
             {
@@ -218,30 +210,16 @@ namespace playerDatabase
         public void DeletePlayer()
         {
             Console.WriteLine("Введите номер игрока, которого хотите удалить");
-            int number = UserUtils.CheckInt();
+            int number = UserUtils.ReadInt();
 
-            Player[] tempPlayers = new Player[_players.Length - 1];
-
-            for (int i = 0; i < _players.Length; i++)
-            {
-                if (_players[i].Number != number)
-                {
-                    tempPlayers[i] = _players[i];
-                }
-                else
-                {
-                    continue;
-                }
-            }
-
-            _players = tempPlayers;
+            _players.RemoveAt(number);
         }
 
         public void ShowInfo()
         {
             foreach(var player in _players)
             {
-                Console.WriteLine($"Имя - {player.Name} | Уровень - {player.Level} | Номер - {player.Number} | Бан - {player.Banned}");
+                Console.WriteLine($"Имя - {player.Name} | Уровень - {player.Level} | Номер - {player.Number} | Бан - {player.IsBanned}");
             }
 
             Console.ReadKey();
