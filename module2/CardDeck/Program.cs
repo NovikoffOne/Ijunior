@@ -10,13 +10,15 @@ namespace CardDeck
     {
         static void Main(string[] args)
         {
-            CardDeck Deck = new CardDeck();
-            Player player = new Player(Deck);
+            CardDeck deck = new CardDeck();
+            Player player = new Player(deck);
+            bool isWork = true;
 
-            while (true)
+            while (isWork)
             {
-                const string More = "1";
-                const string OpenUp = "2";
+                const string CommandTakeCard = "1";
+                const string CommandShowCards = "2";
+                const string CommandExit = "exit";
 
                 DrawMenu();
 
@@ -24,12 +26,15 @@ namespace CardDeck
 
                 switch (userInput)
                 {
-                    case More:
+                    case CommandTakeCard:
                         player.TakeACard();
                         break;
 
-                    case OpenUp:
+                    case CommandShowCards:
                         player.OpenUp();
+                        break;
+                    case CommandExit:
+                        Exit(ref isWork);
                         break;
                 }
 
@@ -37,12 +42,17 @@ namespace CardDeck
             }
         }
 
-        static void DrawMenu()
+        public static void DrawMenu()
         {
             Console.SetCursorPosition(0, 15);
             Console.WriteLine("1 - взять карту!\n" +
                 "2 - вскрыться!");
             Console.SetCursorPosition(0, 0);
+        }
+
+        public static void Exit(ref bool isWork)
+        {
+            isWork = false;
         }
     }
 
@@ -50,18 +60,18 @@ namespace CardDeck
 
     class Card
     {
-        protected string[] Values = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "jack", "qeen", "king", "ace"};
-        protected string[] Suits = {"crosses", "diamonds", "hearts", "piques"};
+        protected string[] values = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "jack", "qeen", "king", "ace"};
+        protected string[] suits = {"crosses", "diamonds", "hearts", "piques"};
         public string Value { get; private set; }
         public string Suit { get; private set; }
 
         public Card(string suit=null, string value=null)
         {
-            if (Suits.Contains(suit))
+            if (suits.Contains(suit))
             {
                 Suit = suit;
             }
-            if (Values.Contains(value))
+            if (values.Contains(value))
             {
                 Value = value;
             }
@@ -72,17 +82,17 @@ namespace CardDeck
     {
         private List<Card> _deck;
         private Random _random = new Random();
-        private Queue<Card> Deck = new Queue<Card>();
+        private Queue<Card> _mixedDeck = new Queue<Card>();
 
         public CardDeck()
         {
             _deck = new List<Card>();
 
-            for (int i = 0; i < Suits.Length; i++)
+            for (int i = 0; i < suits.Length; i++)
             {
-                for (int j = 0; j < Values.Length; j++)
+                for (int j = 0; j < values.Length; j++)
                 {
-                    _deck.Add(new Card(Suits[i], Values[j]));
+                    _deck.Add(new Card(suits[i], values[j]));
                 }
             }
 
@@ -106,34 +116,35 @@ namespace CardDeck
         {
             foreach (var card in _deck)
             {
-                Deck.Enqueue(card);
+                _mixedDeck.Enqueue(card);
             }
         }
 
         public Card TakeCard()
         {
-           return Deck.Dequeue();
+           var card = _mixedDeck.Dequeue();
+           return card;
         }
     }
 
     class Player
     {
-        private List<Card> CardsInHand= new List<Card>();
-        private CardDeck Deck;
+        private List<Card> _cardsInHand= new List<Card>();
+        private CardDeck _deck;
 
         public Player(CardDeck deck)
         {
-            Deck = deck;
+            _deck = deck;
         }
 
         public void TakeACard()
         {
-           CardsInHand.Add(Deck.TakeCard());
+           _cardsInHand.Add(_deck.TakeCard());
         }
 
         public void OpenUp()
         {
-            foreach (var card in CardsInHand)
+            foreach (var card in _cardsInHand)
             {
                 Console.WriteLine($"{card.Value} - {card.Suit}");
             }
