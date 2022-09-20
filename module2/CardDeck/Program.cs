@@ -27,12 +27,13 @@ namespace CardDeck
                 switch (userInput)
                 {
                     case CommandTakeCard:
-                        player.TakeACard();
+                        player.TakeCard();
                         break;
 
                     case CommandShowCards:
-                        player.OpenUp();
+                        player.ShowCard();
                         break;
+
                     case CommandExit:
                         Exit(ref isWork);
                         break;
@@ -42,36 +43,35 @@ namespace CardDeck
             }
         }
 
-        public static void DrawMenu()
+        private static void DrawMenu()
         {
             Console.SetCursorPosition(0, 15);
-            Console.WriteLine("1 - взять карту!\n" +
+            Console.WriteLine
+                ("1 - взять карту!\n" +
                 "2 - вскрыться!");
             Console.SetCursorPosition(0, 0);
         }
 
-        public static void Exit(ref bool isWork)
+        private static void Exit(ref bool isWork)
         {
             isWork = false;
         }
     }
 
-
-
     class Card
     {
-        protected string[] values = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "jack", "qeen", "king", "ace"};
-        protected string[] suits = {"crosses", "diamonds", "hearts", "piques"};
         public string Value { get; private set; }
         public string Suit { get; private set; }
+        protected string[] Values = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "jack", "qeen", "king", "ace"};
+        protected string[] Suits = {"crosses", "diamonds", "hearts", "piques"};
 
-        public Card(string suit=null, string value=null)
+        public Card(string suit = null, string value = null)
         {
-            if (suits.Contains(suit))
+            if (Suits.Contains(suit))
             {
                 Suit = suit;
             }
-            if (values.Contains(value))
+            if (Values.Contains(value))
             {
                 Value = value;
             }
@@ -88,16 +88,22 @@ namespace CardDeck
         {
             _deck = new List<Card>();
 
-            for (int i = 0; i < suits.Length; i++)
+            for (int i = 0; i < Suits.Length; i++)
             {
-                for (int j = 0; j < values.Length; j++)
+                for (int j = 0; j < Values.Length; j++)
                 {
-                    _deck.Add(new Card(suits[i], values[j]));
+                    _deck.Add(new Card(Suits[i], Values[j]));
                 }
             }
 
             ShuffleTheDeck();
             CreateDeck();
+        }
+
+        public Card GiveCard()
+        {
+           var card = _mixedDeck.Dequeue();
+           return card;
         }
 
         private void ShuffleTheDeck()
@@ -119,17 +125,11 @@ namespace CardDeck
                 _mixedDeck.Enqueue(card);
             }
         }
-
-        public Card TakeCard()
-        {
-           var card = _mixedDeck.Dequeue();
-           return card;
-        }
     }
 
     class Player
     {
-        private List<Card> _cardsInHand= new List<Card>();
+        private List<Card> _cardsInHand = new List<Card>();
         private CardDeck _deck;
 
         public Player(CardDeck deck)
@@ -137,12 +137,12 @@ namespace CardDeck
             _deck = deck;
         }
 
-        public void TakeACard()
+        public void TakeCard()
         {
-           _cardsInHand.Add(_deck.TakeCard());
+           _cardsInHand.Add(_deck.GiveCard());
         }
 
-        public void OpenUp()
+        public void ShowCard()
         {
             foreach (var card in _cardsInHand)
             {
