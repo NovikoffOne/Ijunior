@@ -1,8 +1,0 @@
-D:\IJunior\module2\playerDatabase\bin\Debug\playerDatabase.exe.config
-D:\IJunior\module2\playerDatabase\bin\Debug\playerDatabase.exe
-D:\IJunior\module2\playerDatabase\bin\Debug\playerDatabase.pdb
-D:\IJunior\module2\playerDatabase\obj\Debug\playerDatabase.csproj.AssemblyReference.cache
-D:\IJunior\module2\playerDatabase\obj\Debug\playerDatabase.csproj.SuggestedBindingRedirects.cache
-D:\IJunior\module2\playerDatabase\obj\Debug\playerDatabase.csproj.CoreCompileInputs.cache
-D:\IJunior\module2\playerDatabase\obj\Debug\playerDatabase.exe
-D:\IJunior\module2\playerDatabase\obj\Debug\playerDatabase.pdb
