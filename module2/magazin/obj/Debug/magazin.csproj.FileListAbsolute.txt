@@ -1,0 +1,8 @@
+D:\IJunior\module2\magazin\bin\Debug\magazin.exe.config
+D:\IJunior\module2\magazin\bin\Debug\magazin.exe
+D:\IJunior\module2\magazin\bin\Debug\magazin.pdb
+D:\IJunior\module2\magazin\obj\Debug\magazin.csproj.AssemblyReference.cache
+D:\IJunior\module2\magazin\obj\Debug\magazin.csproj.SuggestedBindingRedirects.cache
+D:\IJunior\module2\magazin\obj\Debug\magazin.csproj.CoreCompileInputs.cache
+D:\IJunior\module2\magazin\obj\Debug\magazin.exe
+D:\IJunior\module2\magazin\obj\Debug\magazin.pdb
