@@ -1,0 +1,8 @@
+D:\IJunior\module2\pessengerTrainConfig2\bin\Debug\pessengerTrainConfig2.exe.config
+D:\IJunior\module2\pessengerTrainConfig2\bin\Debug\pessengerTrainConfig2.exe
+D:\IJunior\module2\pessengerTrainConfig2\bin\Debug\pessengerTrainConfig2.pdb
+D:\IJunior\module2\pessengerTrainConfig2\obj\Debug\pessengerTrainConfig2.csproj.AssemblyReference.cache
+D:\IJunior\module2\pessengerTrainConfig2\obj\Debug\pessengerTrainConfig2.csproj.SuggestedBindingRedirects.cache
+D:\IJunior\module2\pessengerTrainConfig2\obj\Debug\pessengerTrainConfig2.csproj.CoreCompileInputs.cache
+D:\IJunior\module2\pessengerTrainConfig2\obj\Debug\pessengerTrainConfig2.exe
+D:\IJunior\module2\pessengerTrainConfig2\obj\Debug\pessengerTrainConfig2.pdb
