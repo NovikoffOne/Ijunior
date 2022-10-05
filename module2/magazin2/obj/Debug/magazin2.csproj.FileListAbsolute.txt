@@ -1,0 +1,7 @@
+D:\CSharp\IUNIOR\module2\magazin2\obj\Debug\magazin2.csproj.AssemblyReference.cache
+D:\CSharp\IUNIOR\module2\magazin2\obj\Debug\magazin2.csproj.CoreCompileInputs.cache
+D:\CSharp\IUNIOR\module2\magazin2\bin\Debug\magazin2.exe.config
+D:\CSharp\IUNIOR\module2\magazin2\bin\Debug\magazin2.exe
+D:\CSharp\IUNIOR\module2\magazin2\bin\Debug\magazin2.pdb
+D:\CSharp\IUNIOR\module2\magazin2\obj\Debug\magazin2.exe
+D:\CSharp\IUNIOR\module2\magazin2\obj\Debug\magazin2.pdb
