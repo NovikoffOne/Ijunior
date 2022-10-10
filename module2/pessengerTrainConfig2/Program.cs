@@ -21,7 +21,11 @@ namespace pessengerTrainConfig2
             {
                 station.DrawTrain();
 
-                DrawMenu(CommandCreateTrain, CommandSendTrain, CommandExit);
+                Console.WriteLine(
+                        $"{CommandCreateTrain} - Создать поезд.\n" +
+                        $"{CommandSendTrain} - Отправить поезд.\n" +
+                        $"{CommandExit} - Выход."
+                                 );
 
                 string userInput = Console.ReadLine();
 
@@ -44,18 +48,9 @@ namespace pessengerTrainConfig2
             }
             
         }
-
-        private static void DrawMenu(string createTrain, string sendTrain, string exit)
-        {
-            Console.WriteLine(
-                $"{createTrain} - Создать поезд.\n" +
-                $"{sendTrain} - Отправить поезд.\n" +
-                $"{exit} - Выход."
-                );
-        }
     }
 
-    static public class UserUtils
+    public static class UserUtils
     {
         public static int ReadInt()
         {
@@ -81,7 +76,7 @@ namespace pessengerTrainConfig2
         public string CityDeparture { get; private set; }
         public int Passenger { get; private set; }
         public int Wagons { get; private set; }
-        public bool IsWay { get; private set; }
+        public bool IsSent { get; private set; }
 
         public Train()
         {
@@ -94,36 +89,44 @@ namespace pessengerTrainConfig2
 
             FormWagons();
 
-            SendTrain();
+            Send();
         }
 
-        public void SendTrain()
+        public void Send()
         {
-            const string CommandTrain = "0";
-            const string CommandNotTrain = "1";
+            const string CommandSendTrain = "0";
+            const string CommandNotSendTrain = "1";
 
             Console.WriteLine
-                ($"Что бы отправить поезд введите - {CommandTrain}.\n" +
-                $"Не отправлять - {CommandNotTrain}");
+                ($"Что бы отправить поезд введите - {CommandSendTrain}.\n" +
+                $"Не отправлять - {CommandNotSendTrain}");
             string userInput = Console.ReadLine();
 
             switch (userInput)
             {
-                case CommandTrain:
-                    IsWay = true;
+                case CommandSendTrain:
+                    IsSent = true;
                     break;
 
-                case CommandNotTrain:
-                    IsWay = false;
+                case CommandNotSendTrain:
+                    IsSent = false;
                     break;
             }
         }
 
         private void FormWagons()
         {
-            decimal numberWagons = (Passenger / PassengerInWagon);
+            int numberWagons = (Passenger / PassengerInWagon);
+            
+            if (Passenger % PassengerInWagon != 0)
+            {
+                Wagons = numberWagons + 1;
+            }
+            else
+            {
+                Wagons = numberWagons;
+            }
 
-            Wagons = Convert.ToInt32(Math.Ceiling(numberWagons));
             Console.WriteLine($"Количесвто вагонов : {Wagons}");
             Console.ReadKey();
         }
@@ -158,7 +161,7 @@ namespace pessengerTrainConfig2
                     string way;
                     int index = 0;
 
-                    if (train.IsWay)
+                    if (train.IsSent)
                     {
                         way = "В пути";
                     }
@@ -181,8 +184,24 @@ namespace pessengerTrainConfig2
         {
             Console.Write("Введите номер поезда, который хотите отправить : ");
             int userInput = UserUtils.ReadInt();
-
-            _trains[userInput].SendTrain();
+            
+            if (userInput >= 0 && userInput < _trains.Count)
+            {
+                if (_trains[userInput].IsSent == false)
+                {
+                    _trains[userInput].Send();
+                }
+                else
+                {
+                    Console.WriteLine("Поезд уже в пути!");
+                    Console.ReadKey();
+                }
+            }
+            else
+            {
+                Console.WriteLine("Такого поезда не существует...");
+                Console.ReadKey();
+            }
         }
     }
 }
