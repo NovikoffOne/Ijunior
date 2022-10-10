@@ -12,6 +12,7 @@ namespace GladiatorFights
         {
             const string CommandFight = "1";
             const string CommandExit = "2";
+
             bool isWork = true;
 
             while (isWork)
@@ -40,46 +41,46 @@ namespace GladiatorFights
 
     class Fighter
     {
-        public string Name { get; protected set; }
-        public int Health { get; protected set; }
         public string Class { get; protected set; }
-        protected int _countKick;
-        protected int _damage;
-        protected int _armor;
-        protected Random random = new Random();
-        protected int _minDamage;
-        protected int _maxDamage;
-        protected int _hitsToCombos;
-
+        public int Health { get; protected set; }
+        
+        protected int CountKick;
+        protected int Damage;
+        protected int Armor;
+        protected int MinDamage;
+        protected int MaxDamage;
+        protected Random Random = new Random();
+        protected int HitsToCombos;
+        
         public Fighter(string name = "")
         {
-            Name = name;
-            _countKick = 0;
+            Class = name;
+            CountKick = 0;
         }
 
         public virtual int GiveDamage()
         {
-            _damage = random.Next(_minDamage, _maxDamage);
-            Console.WriteLine($"{Name} наносит {_damage} урона...");
+            Damage = Random.Next(MinDamage, MaxDamage);
+            Console.WriteLine($"{Class} наносит {Damage} урона...");
 
-            return _damage;
+            return Damage;
         }
 
         public virtual void TakeDamage(int damage)
         {
-            damage = ArmorClass(damage);
+            damage = CalculateNetDamage(damage);
             Health -= damage;
         }
 
         public void ShowInfo()
         {
-            Console.WriteLine($"Name - {Name} | Class - {Class} | HP - {Health} | ARM - {_armor} | DMG - {_minDamage}-{_maxDamage}");
+            Console.WriteLine($" Class - {Class} | HP - {Health} | ARM - {Armor} | DMG - {MinDamage}-{MaxDamage}");
         }
 
-        protected int ArmorClass(int damage)
+        protected int CalculateNetDamage(int damage)
         {
             double tempDamage = Convert.ToDouble(damage);
-            tempDamage *= (double)_armor / 100;
+            tempDamage *= (double)Armor / 100;
             damage = Convert.ToInt32(Convert.ToDouble(damage) - tempDamage);
             
             return damage;
@@ -88,34 +89,33 @@ namespace GladiatorFights
 
     class Paladin : Fighter
     {
-        public Paladin(string name)
+        public Paladin()
         {
-            Name = name;
             Health = 100;
             Class = "Пладин";
-            _minDamage = 4;
-            _maxDamage = 8;
-            _armor = 50;
-            _hitsToCombos = 3;
+            MinDamage = 4;
+            MaxDamage = 8;
+            Armor = 50;
+            HitsToCombos = 3;
         }
 
         public override int GiveDamage()
         {
-            _damage = random.Next(_minDamage, _maxDamage);
-            _countKick++;
+            Damage = Random.Next(MinDamage, MaxDamage);
+            CountKick++;
 
             MakeCombo();
 
-            Console.WriteLine($"{Name} наносит {_damage} урона...");
+            Console.WriteLine($"{Class} наносит {Damage} урона...");
 
-            return _damage;
+            return Damage;
         }
 
         private void MakeCombo()
         {
-            if ((_countKick % _hitsToCombos) == 0)
+            if ((CountKick % HitsToCombos) == 0)
             {
-                _damage += random.Next(_minDamage, _maxDamage);
+                Damage += Random.Next(MinDamage, MaxDamage);
 
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Паладин наносит два удара!");
@@ -126,33 +126,34 @@ namespace GladiatorFights
 
     class Warrior : Fighter
     {
-        public Warrior(string name)
+        private int _factorBonusDamage = 2;
+
+        public Warrior()
         {
-            Name = name;
             Health = 110;
             Class = "Воин";
-            _minDamage = 6;
-            _maxDamage = 10;
-            _armor = 30;
-            _hitsToCombos = 5;
+            MinDamage = 6;
+            MaxDamage = 10;
+            Armor = 30;
+            HitsToCombos = 5;
         }
 
         public override int GiveDamage()
         {
-            _countKick++;
-            _damage = random.Next(_minDamage, _maxDamage);
+            CountKick++;
+            Damage = Random.Next(MinDamage, MaxDamage);
 
-            if (_countKick % _hitsToCombos == 0)
+            if (CountKick % HitsToCombos == 0)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Воин выждал момент и наносит двойной урон!");
                 Console.ForegroundColor = ConsoleColor.White;
-                _damage *= 2;
+                Damage *= _factorBonusDamage;
             }
 
-            Console.WriteLine($"{Name} наносит {_damage} урона...");
+            Console.WriteLine($"{Class} наносит {Damage} урона...");
 
-            return _damage;
+            return Damage;
         }
     }
 
@@ -160,24 +161,24 @@ namespace GladiatorFights
     {
         private int _dodgeСhance;
 
-        public Pathfinder(string name)
+        public Pathfinder()
         {
-            Name = name;
             Health = 150;
             Class = "Следопыт";
-            _minDamage = 4;
-            _maxDamage = 6;
-            _armor = 30;
-            _hitsToCombos = 3;
+            MinDamage = 4;
+            MaxDamage = 6;
+            Armor = 30;
+            HitsToCombos = 3;
             _dodgeСhance = 30;
         }
 
         public override void TakeDamage(int damage)
         {
-            int dodge = random.Next(0, 100);
+            int dodge = Random.Next(0, 100);
+
             if(dodge > _dodgeСhance)
             {
-                damage = ArmorClass(damage);
+                damage = CalculateNetDamage(damage);
                 Health -= damage;
             }
             else
@@ -192,26 +193,28 @@ namespace GladiatorFights
     class Barbarian : Fighter
     {
         private int _rageCounter = 35;
+        private int _minRageDamage = 9;
+        private int _maxRageDamage = 13;
+        private int _rageHealing = 2;
 
-        public Barbarian(string name)
+        public Barbarian()
         {
-            Name = name;
             Health = 90;
             Class = "Варвар";
-            _minDamage = 7;
-            _maxDamage = 11;
-            _armor = 10;
+            MinDamage = 7;
+            MaxDamage = 11;
+            Armor = 10;
         }
 
         public override void TakeDamage(int damage)
         {
-            damage = ArmorClass(damage);
+            damage = CalculateNetDamage(damage);
             Health -= damage;
 
-            Rage();
+            GoRage();
         }
 
-        public void Rage()
+        public void GoRage()
         {
             if (Health < _rageCounter)
             {
@@ -219,9 +222,9 @@ namespace GladiatorFights
                 Console.WriteLine("Варвар в ярости!");
                 Console.ForegroundColor = ConsoleColor.White;
 
-                Health += 2;
-                _minDamage = 9;
-                _maxDamage = 13;
+                Health += _rageHealing;
+                MinDamage = _minRageDamage;
+                MaxDamage = _maxRageDamage;
             }
         }
     }
@@ -229,33 +232,33 @@ namespace GladiatorFights
     class Monk : Fighter
     {
         private int _hitChance = 80;
-        private int _chiShieldChance = 25; 
+        private int _chiShieldChance = 25;
+        private int _factorBonusDamage = 2;
 
-        public Monk(string name)
+        public Monk()
         {
-            Name = name;
             Health = 120;
             Class = "Монах";
-            _minDamage = 4;
-            _maxDamage = 5;
-            _armor = 5;
-            _hitsToCombos = 3;
+            MinDamage = 4;
+            MaxDamage = 5;
+            Armor = 5;
+            HitsToCombos = 3;
         }
 
         public override int GiveDamage()
         {
-            _damage = random.Next(_minDamage, _maxDamage);
+            Damage = Random.Next(MinDamage, MaxDamage);
 
-            StrikeQi();
+            ApplyPreciseBlow();
             
-            Console.WriteLine($"{Name} наносит {_damage} урона...");
+            Console.WriteLine($"{Class} наносит {Damage} урона...");
 
-            return _damage;
+            return Damage;
         }
 
         public override void TakeDamage(int damage)
         {
-            int chance = random.Next(0, 100);
+            int chance = Random.Next(0, 100);
 
             if (chance <= _chiShieldChance)
             {
@@ -265,44 +268,42 @@ namespace GladiatorFights
             }
             else
             {
-                damage = ArmorClass(damage);
+                damage = CalculateNetDamage(damage);
                 Health -= damage;
             }
         }
 
-        public void StrikeQi() 
+        public void ApplyPreciseBlow() 
         {
-            int chance = random.Next(0, 100);
+            int chance = Random.Next(0, 100);
 
-            if((_countKick % _hitsToCombos == 0) && chance < _hitChance)
+            if((CountKick % HitsToCombos == 0) && chance < _hitChance)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Монах читает энергию ЦИ и наносит точный удар!");
                 Console.ForegroundColor = ConsoleColor.White;
 
-                _damage *= 2;
+                Damage *= _factorBonusDamage;
             }
         }
     }
 
     class Arena
     {
-
-        private List<string> _fighters = new List<string> { "Паладин", "Воин", "Следопыт", "Варвар", "Монах" };
         private Fighter _fighter1;
         private Fighter _fighter2;
 
-        public void NewFight()
+        public Arena()
         {
             _fighter1 = ChooseFighter();
             _fighter1.ShowInfo();
             _fighter2 = ChooseFighter();
             _fighter2.ShowInfo();
 
-            Battle();
+            StartFight();
         }
 
-        private void Battle()
+        private void StartFight()
         {
             int round = 1;
 
@@ -330,11 +331,13 @@ namespace GladiatorFights
             const string CommandCreateBarbarian = "3";
             const string CommandCreateMonk = "4";
 
+            List<string> fightersClass = new List<string> { "Паладин", "Воин", "Следопыт", "Варвар", "Монах" };
+
             int index = 0;
 
             Console.WriteLine("Выберите бойца : ");
 
-            foreach (string fighter in _fighters)
+            foreach (string fighter in fightersClass)
             {
                 Console.WriteLine($"{index} - {fighter}");
                 index++;
@@ -342,25 +345,22 @@ namespace GladiatorFights
 
             string userInput = Console.ReadLine();
 
-            Console.Write("Введите имя : ");
-            string userName = Console.ReadLine();
-
             switch (userInput)
             {
                 case CommandCreatePaladin:
-                    return new Paladin(userName);
+                    return new Paladin();
 
                 case CommandCreateWarrior:
-                    return new Warrior(userName);
+                    return new Warrior();
 
                 case CommandCreatePathfinder:
-                    return new Pathfinder(userName);
+                    return new Pathfinder();
 
                 case CommandCreateBarbarian:
-                    return new Barbarian(userName);
+                    return new Barbarian();
 
                 case CommandCreateMonk:
-                    return new Monk(userName);
+                    return new Monk();
 
                 default:
                     Console.WriteLine("Что то пошло не так!");
@@ -377,14 +377,14 @@ namespace GladiatorFights
             if (_fighter2.Health > 0 && _fighter1.Health <= 0)
             {
                 Console.ForegroundColor = colorWin;
-                Console.WriteLine($"Победил {_fighter2.Name}!");
+                Console.WriteLine($"Победил {_fighter2.Class}!");
                 _fighter2.ShowInfo();
                 Console.ForegroundColor = colorDefault;
             }
             else if (_fighter1.Health > 0 && _fighter2.Health <= 0)
             {
                 Console.ForegroundColor = colorWin;
-                Console.WriteLine($"Победил {_fighter1.Name}!");
+                Console.WriteLine($"Победил {_fighter1.Class}!");
                 _fighter1.ShowInfo();
                 Console.ForegroundColor = colorDefault;
             }
