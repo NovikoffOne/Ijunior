@@ -41,8 +41,6 @@ namespace GladiatorFights
 
     class Fighter
     {
-        public string Class { get; protected set; }
-        public int Health { get; protected set; }
         
         protected int CountKick;
         protected int Damage;
@@ -52,6 +50,9 @@ namespace GladiatorFights
         protected Random Random = new Random();
         protected int HitsToCombos;
         
+        public string Class { get; protected set; }
+        public int Health { get; protected set; }
+
         public Fighter(string name = "")
         {
             Class = name;
@@ -325,47 +326,21 @@ namespace GladiatorFights
 
         private Fighter ChooseFighter()
         {
-            const string CommandCreatePaladin = "0";
-            const string CommandCreateWarrior = "1";
-            const string CommandCreatePathfinder = "2";
-            const string CommandCreateBarbarian = "3";
-            const string CommandCreateMonk = "4";
-
-            List<string> fightersClass = new List<string> { "Паладин", "Воин", "Следопыт", "Варвар", "Монах" };
+            List<Fighter> fightersPlayer = new List<Fighter>() { new Paladin(), new Warrior(), new Pathfinder(), new Barbarian(), new Monk() };
 
             int index = 0;
 
             Console.WriteLine("Выберите бойца : ");
 
-            foreach (string fighter in fightersClass)
+            foreach (var fighter in fightersPlayer)
             {
-                Console.WriteLine($"{index} - {fighter}");
+                Console.WriteLine($"{index} - {fighter.Class}");
                 index++;
             }
 
-            string userInput = Console.ReadLine();
+            int userInput = Convert.ToInt32(Console.ReadLine());
 
-            switch (userInput)
-            {
-                case CommandCreatePaladin:
-                    return new Paladin();
-
-                case CommandCreateWarrior:
-                    return new Warrior();
-
-                case CommandCreatePathfinder:
-                    return new Pathfinder();
-
-                case CommandCreateBarbarian:
-                    return new Barbarian();
-
-                case CommandCreateMonk:
-                    return new Monk();
-
-                default:
-                    Console.WriteLine("Что то пошло не так!");
-                    return null;
-            }
+            return fightersPlayer[userInput];
         }
 
         private void ShowWinner()
