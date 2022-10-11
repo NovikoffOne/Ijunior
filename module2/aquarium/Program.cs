@@ -74,8 +74,8 @@ namespace aquarium
 
     class Aquarium
     {
-        private int _maxFish;
         private List<Fish> _fishes;
+        private int _maxFish;
 
         public Aquarium(int maxFish)
         {
@@ -92,7 +92,7 @@ namespace aquarium
 
             foreach (var fish in _fishes)
             {
-                if (fish.isLive)
+                if (fish.IsLive)
                 {
                     isLive = "Живая";
                 }
@@ -110,11 +110,11 @@ namespace aquarium
 
         public void AddFish()
         {
-            string name = Console.ReadLine();
-            string type = Console.ReadLine();
-
             if (_fishes.Count <= _maxFish)
             {
+                string name = Console.ReadLine();
+                string type = Console.ReadLine();
+
                 _fishes.Add(new Fish(name, type));
                 Console.WriteLine($"рыбка {name} - {type}, запущена в акквариум.");
             }
@@ -145,25 +145,26 @@ namespace aquarium
            foreach(var fish in _fishes)
            {
                 fish.AgeFish();
-                fish.TestLive();
+                fish.VerifyLive();
            }
         }
     }
 
     class Fish
     {
+        private int _maxOld;
+
         public string TypeFish { get; private set; }
         public string Name { get; private set; }
         public int Old { get; private set; }
-        public bool isLive { get; private set; }
-        private int _maxOld;
+        public bool IsLive { get; private set; }
 
         public Fish(string name = "нонейм", string type = "неопределено", int maxOld = 5)
         {
             Name = name;
+            IsLive = true;
             TypeFish = type;
             Old = 0;
-            isLive = true;
             _maxOld = maxOld;
         }
 
@@ -172,11 +173,11 @@ namespace aquarium
             Old += 1;
         }
 
-        public void TestLive()
+        public void VerifyLive()
         {
             if (Old > _maxOld)
             {
-                isLive = false;
+                IsLive = false;
             }
         }
     }
