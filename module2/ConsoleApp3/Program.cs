@@ -10,51 +10,43 @@ namespace ConsoleApp3
     {
         static void Main(string[] args)
         {
-            Aviaries aviaries1 = new Aviaries ( "обезьяны", new List<Animals>{ new Animals("Мартышка", "муж", "Рев"), new Animals("Горила", "жен", "Рев"), new Animals("Капуцин", "жен", "Рев"), new Animals("Капуцин", "муж", "Рев") });
-            Aviaries aviaries2 = new Aviaries("собаки", new List<Animals> { new Animals("Динго", "муж", "Лай"), new Animals("Динго", "жен", "Лай"), new Animals("Гиена", "жен", "Лай"), new Animals("Гиена", "муж", "Лай"), new Animals("Гиена", "муж", "Лай") });
-            Aviaries aviaries3 = new Aviaries("Львы", new List<Animals> { new Animals("Лев", "муж", "Рев"), new Animals("Лев", "жен", "Рев") });
-            Aviaries aviaries4 = new Aviaries("Жирафы", new List<Animals> { new Animals("Жираф", "муж", "Мычание") });
-            Aviaries[] aviaries = new Aviaries[] { aviaries1, aviaries2, aviaries3, aviaries4 };
+            Aviary aviaries1 = new Aviary ( "обезьяны", new List<Animals>{ new Animals("Мартышка", "муж", "Рев"), new Animals("Горила", "жен", "Рев"), new Animals("Капуцин", "жен", "Рев"), new Animals("Капуцин", "муж", "Рев") });
+            Aviary aviaries2 = new Aviary("собаки", new List<Animals> { new Animals("Динго", "муж", "Лай"), new Animals("Динго", "жен", "Лай"), new Animals("Гиена", "жен", "Лай"), new Animals("Гиена", "муж", "Лай"), new Animals("Гиена", "муж", "Лай") });
+            Aviary aviaries3 = new Aviary("Львы", new List<Animals> { new Animals("Лев", "муж", "Рев"), new Animals("Лев", "жен", "Рев") });
+            Aviary aviaries4 = new Aviary("Жирафы", new List<Animals> { new Animals("Жираф", "муж", "Мычание") });
+            Aviary[] aviaries = new Aviary[] { aviaries1, aviaries2, aviaries3, aviaries4 };
             Zoo zoo = new Zoo(aviaries);
             bool isWork = true;
 
             while (isWork)
             {
-                const int GoMonkey = 0;
-                const int GoDogs = 1;
-                const int GoLions = 2;
-                const int GoGiraffs = 3;
-                const int GoExit = 4;
-
-                Console.WriteLine($"На кого хотите посмотреть : \n" +
-                    $"{GoMonkey} - {aviaries1.Name}\n" +
-                    $"{GoDogs} - {aviaries2.Name}\n" +
-                    $"{GoLions} - {aviaries3.Name}\n" +
-                    $"{GoGiraffs} - {aviaries4.Name}\n" +
-                    $"{GoExit} - выход");
-                int userInput = UserUtils.ReadInt() ;
-
-                switch (userInput)
+                Console.WriteLine("На кого хотите посмотреть : ");
+                
+                for (int i = 0; i < zoo.Aviaries.Count(); i++)
                 {
-                    case GoMonkey:
-                        zoo.DrawAviares(GoMonkey);
-                        break;
+                    Console.WriteLine($"{i}. {zoo.Aviaries[i].Name}");
+                }
 
-                    case GoDogs:
-                        zoo.DrawAviares(GoDogs);
-                        break;
+                Console.WriteLine("exit - ВЫХОД");
 
-                    case GoLions:
-                        zoo.DrawAviares(GoLions);
-                        break;
+                string userInput = Console.ReadLine();
 
-                    case GoGiraffs:
-                        zoo.DrawAviares(GoGiraffs);
-                        break;
+                if (userInput == "exit")
+                {
+                    isWork = false;
+                }
+                else
+                {
+                    int index = UserUtils.ReadInt(userInput);
 
-                    case GoExit:
-                        isWork = false;
-                        break;
+                    if (index < zoo.Aviaries.Length && index >= 0)
+                    {
+                        zoo.DrawAviares(index);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Попробуйте еще раз.");
+                    }
                 }
 
                 Console.Clear();
@@ -64,9 +56,9 @@ namespace ConsoleApp3
 
     public static class UserUtils
     {
-        public static int ReadInt()
+        public static int ReadInt(string userInput)
         {
-            bool isNumber = int.TryParse(Console.ReadLine(), out int number);
+            bool isNumber = int.TryParse(userInput, out int number);
 
             if (isNumber)
             {
@@ -82,36 +74,33 @@ namespace ConsoleApp3
 
     class Zoo
     {
-        private Aviaries[] _aviaries;
+        public Aviary[] Aviaries { get; private set; }
 
-        public Zoo(Aviaries[] aviaries)
+        public Zoo(Aviary[] aviaries)
         {
-            _aviaries = aviaries;
+            Aviaries = aviaries;
         }
 
         public void DrawAviares(int index)
         {
-            _aviaries[index].ShowInfo();   
+            Aviaries[index].ShowInfo();   
         }
     }
 
-    class Aviaries
+    class Aviary
     {
-        public string Name { get; private set; }
         private List<Animals> _animals;
-        private int _countAnimals;
+        public string Name { get; private set; }
 
-        public Aviaries(string name, List<Animals> animals )
+        public Aviary(string name, List<Animals> animals )
         {
             _animals = animals;
             Name = name;
-            _countAnimals = _animals.Count;
         }
 
         public void ShowInfo()
         {
-            Console.WriteLine(
-                $"В вольере живут {Name}, в количестве {_countAnimals}.\nОбитатели :");
+            Console.WriteLine($"В вольере живут {Name}, в количестве {_animals.Count}.\nОбитатели :");
 
             foreach (var animal in _animals)
             {
