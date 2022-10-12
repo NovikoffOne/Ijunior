@@ -67,7 +67,7 @@ namespace aquarium
             else
             {
                 Console.WriteLine("Попробуйте еще раз!");
-                return number = 0;
+                return ReadInt();
             }
         }
     }
@@ -145,7 +145,6 @@ namespace aquarium
            foreach(var fish in _fishes)
            {
                 fish.AgeFish();
-                fish.VerifyLive();
            }
         }
     }
@@ -156,29 +155,39 @@ namespace aquarium
 
         public string TypeFish { get; private set; }
         public string Name { get; private set; }
-        public int Old { get; private set; }
-        public bool IsLive { get; private set; }
+        public int Age { get; private set; }
+        public bool IsLive
+        {
+            get
+            {
+                return Age <= _maxOld;
+            }
+            private set
+            {
+
+            }
+        }
 
         public Fish(string name = "нонейм", string type = "неопределено", int maxOld = 5)
         {
             Name = name;
             IsLive = true;
             TypeFish = type;
-            Old = 0;
+            Age = 0;
             _maxOld = maxOld;
         }
 
         public void AgeFish()
         {
-            Old += 1;
+            Age += 1;
         }
 
-        public void VerifyLive()
-        {
-            if (Old > _maxOld)
-            {
-                IsLive = false;
-            }
-        }
+        //public void VerifyLive()
+        //{
+        //    if (Age > _maxOld)
+        //    {
+        //        IsLive = false;
+        //    }
+        //}
     }
 }
