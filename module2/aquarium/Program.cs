@@ -144,7 +144,7 @@ namespace aquarium
         {
            foreach(var fish in _fishes)
            {
-                fish.AgeFish();
+                fish.AddYear();
            }
         }
     }
@@ -162,7 +162,7 @@ namespace aquarium
             {
                 return Age <= _maxOld;
             }
-            private set
+            set
             {
 
             }
@@ -177,17 +177,9 @@ namespace aquarium
             _maxOld = maxOld;
         }
 
-        public void AgeFish()
+        public void AddYear()
         {
             Age += 1;
         }
-
-        //public void VerifyLive()
-        //{
-        //    if (Age > _maxOld)
-        //    {
-        //        IsLive = false;
-        //    }
-        //}
     }
 }
