@@ -10,80 +10,72 @@ namespace ConsoleApp3
     {
         static void Main(string[] args)
         {
+            const string CommandExit = "e";
+
             Aviary aviaries1 = new Aviary ( "обезьяны", new List<Animals>{ new Animals("Мартышка", "муж", "Рев"), new Animals("Горила", "жен", "Рев"), new Animals("Капуцин", "жен", "Рев"), new Animals("Капуцин", "муж", "Рев") });
             Aviary aviaries2 = new Aviary("собаки", new List<Animals> { new Animals("Динго", "муж", "Лай"), new Animals("Динго", "жен", "Лай"), new Animals("Гиена", "жен", "Лай"), new Animals("Гиена", "муж", "Лай"), new Animals("Гиена", "муж", "Лай") });
             Aviary aviaries3 = new Aviary("Львы", new List<Animals> { new Animals("Лев", "муж", "Рев"), new Animals("Лев", "жен", "Рев") });
             Aviary aviaries4 = new Aviary("Жирафы", new List<Animals> { new Animals("Жираф", "муж", "Мычание") });
             Aviary[] aviaries = new Aviary[] { aviaries1, aviaries2, aviaries3, aviaries4 };
+
             Zoo zoo = new Zoo(aviaries);
             bool isWork = true;
 
             while (isWork)
             {
                 Console.WriteLine("На кого хотите посмотреть : ");
-                
-                for (int i = 0; i < zoo.Aviaries.Count(); i++)
-                {
-                    Console.WriteLine($"{i}. {zoo.Aviaries[i].Name}");
-                }
 
-                Console.WriteLine("exit - ВЫХОД");
+                zoo.DrawListName();
+
+                Console.WriteLine($"{CommandExit} - ВЫХОД");
 
                 string userInput = Console.ReadLine();
 
-                if (userInput == "exit")
+                if (userInput == CommandExit)
                 {
-                    isWork = false;
+                    Exit();
+                }
+                else if(Convert.ToInt32(userInput) < zoo.CountAviavaries && Convert.ToInt32(userInput) >= 0)
+                {
+                    zoo.DrawAviares(Convert.ToInt32(userInput));
                 }
                 else
                 {
-                    int index = UserUtils.ReadInt(userInput);
-
-                    if (index < zoo.Aviaries.Length && index >= 0)
-                    {
-                        zoo.DrawAviares(index);
-                    }
-                    else
-                    {
-                        Console.WriteLine("Попробуйте еще раз.");
-                    }
+                    Console.WriteLine("Попробуйте еще раз.");
                 }
 
                 Console.Clear();
             }
-        }
-    }
 
-    public static class UserUtils
-    {
-        public static int ReadInt(string userInput)
-        {
-            bool isNumber = int.TryParse(userInput, out int number);
-
-            if (isNumber)
+            void Exit()
             {
-                return number;
-            }
-            else
-            {
-                Console.WriteLine("Попробуйте еще раз!");
-                return number = 0;
+                isWork = false;
             }
         }
     }
 
     class Zoo
     {
-        public Aviary[] Aviaries { get; private set; }
+        private Aviary[] _aviaries;
+        public int CountAviavaries { get; private set; }
 
         public Zoo(Aviary[] aviaries)
         {
-            Aviaries = aviaries;
+            _aviaries = aviaries;
+            CountAviavaries = _aviaries.Count();
         }
 
         public void DrawAviares(int index)
         {
-            Aviaries[index].ShowInfo();   
+            _aviaries[index].ShowInfo();   
+        }
+
+        public void DrawListName()
+        {
+            for (int i = 0; i < _aviaries.Count(); i++)
+            {
+                Console.WriteLine($"{i}. {_aviaries[i].Name}");
+            }
         }
     }
 
