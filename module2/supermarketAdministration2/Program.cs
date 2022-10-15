@@ -17,23 +17,23 @@ namespace supermarketAdministration2
 
     class Supermarket
     {
-        protected Queue<Client> Clients = new Queue<Client>();
+        private Queue<Client> _clients = new Queue<Client>();
         private CashRegister _cashRegister;
 
         public Supermarket()
         {
-            Clients.Enqueue(new Client(new List<Product> { new Product("Хлеб", 12), new Product("Чай", 20) }, 31));
-            Clients.Enqueue(new Client(new List<Product> { new Product("Майонез", 40), new Product("Чай", 20), new Product("Сметана", 13) }, 80));
-            Clients.Enqueue(new Client(new List<Product> { new Product("Капуста", 10), new Product("Макароны", 62), new Product("Пельмени", 200) }, 250));
+            _clients.Enqueue(new Client(new List<Product> { new Product("Хлеб", 12), new Product("Чай", 20) }, 31));
+            _clients.Enqueue(new Client(new List<Product> { new Product("Майонез", 40), new Product("Чай", 20), new Product("Сметана", 13) }, 80));
+            _clients.Enqueue(new Client(new List<Product> { new Product("Капуста", 10), new Product("Макароны", 62), new Product("Пельмени", 200) }, 250));
 
             _cashRegister = new CashRegister();
         }
 
         public void Work()
         {
-            while(Clients.Count > 0)
+            while(_clients.Count > 0)
             {
-                _cashRegister.ServeBuyer(Clients.Dequeue());
+                _cashRegister.ServeBuyer(_clients.Dequeue());
             }
 
             _cashRegister.CloseCashRegister();
@@ -60,7 +60,7 @@ namespace supermarketAdministration2
 
         public void RemoveProduct()
         {
-            _basket.RemoveAt(_random.Next(0, 2));
+            _basket.RemoveAt(_random.Next(_basket.Count));
         }
 
         public int CountPrice()
