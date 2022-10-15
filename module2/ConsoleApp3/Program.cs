@@ -30,14 +30,15 @@ namespace ConsoleApp3
                 Console.WriteLine($"{CommandExit} - ВЫХОД");
 
                 string userInput = Console.ReadLine();
-
-                if (userInput == CommandExit)
-                {
-                    Exit();
-                }
-                else if(Convert.ToInt32(userInput) < zoo.CountAviavaries && Convert.ToInt32(userInput) >= 0)
+                
+                
+                if(int.TryParse(userInput, out int number) && Convert.ToInt32(userInput) < zoo.CountAviavaries && Convert.ToInt32(userInput) >= 0)
                 {
                     zoo.DrawAviares(Convert.ToInt32(userInput));
+                }
+                else if (userInput == CommandExit)
+                {
+                    Exit();
                 }
                 else
                 {
