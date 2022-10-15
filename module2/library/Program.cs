@@ -44,7 +44,7 @@ namespace library
                         break;
 
                     case CommandSearch:
-                        library.Search();
+                        library.SearchBook();
                         break;
 
                     case CommandExit:
@@ -82,14 +82,15 @@ namespace library
             if (_books.Count == 0)
             {
                 Console.WriteLine("Список еще пуст...");
+                return;
             }
 
             Console.Write("Выберите книгу, которую хотите удалить : ");
             string userInput = Console.ReadLine();
             
-            if (_books.Count() > Convert.ToInt32(userInput) && Convert.ToInt32(userInput) >= 0)
+            if (int.TryParse(userInput, out int number) && _books.Count() > number && number >= 0)
             {
-                _books.RemoveAt(Convert.ToInt32(userInput));
+                _books.RemoveAt(number);
                 Console.WriteLine("Книга удалена.");
             }
             else
@@ -112,7 +113,7 @@ namespace library
             }
         }
 
-        public void Search()
+        public void SearchBook()
         {
             const string CommandSearchName = "1";
             const string CommandSearchAuthor = "2";
@@ -126,54 +127,54 @@ namespace library
             switch (userInput)
             {
                 case CommandSearchName:
-                    SearchName();
+                    SearchBookByName();
                     break;
 
                 case CommandSearchAuthor:
-                    SearchAuthor();
+                    SearchBookByAuthor();
                     break;
 
                 case CommandSearchYear:
-                    SearchYear();
+                    SearchBookByYear();
                     break;
             }
+        }
 
-            void SearchName()
+        private void SearchBookByName()
+        {
+            string name = Console.ReadLine();
+
+            foreach (var book in _books)
             {
-                string name = Console.ReadLine();
-
-                foreach(var book in _books)
+                if (name == book.Name)
                 {
-                    if (name == book.Name)
-                    {
-                        book.ShowInfo();
-                    }
+                    book.ShowInfo();
                 }
             }
+        }
 
-            void SearchAuthor()
+        private void SearchBookByAuthor()
+        {
+            string author = Console.ReadLine();
+
+            foreach (var book in _books)
             {
-                string author = Console.ReadLine();
-
-                foreach (var book in _books)
+                if (author == book.Author)
                 {
-                    if (author == book.Author)
-                    {
-                        book.ShowInfo();
-                    }
+                    book.ShowInfo();
                 }
             }
+        }
 
-            void SearchYear()
+        private void SearchBookByYear()
+        {
+            string year = Console.ReadLine();
+
+            foreach (var book in _books)
             {
-                string year = Console.ReadLine();
-
-                foreach (var book in _books)
+                if (year == book.YearIssue)
                 {
-                    if (year == book.YearIssue)
-                    {
-                        book.ShowInfo();
-                    }
+                    book.ShowInfo();
                 }
             }
         }
