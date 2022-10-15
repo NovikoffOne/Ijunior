@@ -32,7 +32,7 @@ namespace library
                 switch (userInput)
                 {
                     case CommandShowBooks:
-                        library.ShowBooks();
+                        library.ShowBooksByName();
                         break;
 
                     case CommandDeleteBook:
@@ -77,7 +77,7 @@ namespace library
         
         public void DeleteBook()
         {
-            ShowBooks();
+            ShowBooksByName();
 
             if (_books.Count == 0)
             {
@@ -101,7 +101,7 @@ namespace library
             Console.ReadKey();
         }
         
-        public void ShowBooks()
+        public void ShowBooksByName()
         {
             int index = 0;
 
