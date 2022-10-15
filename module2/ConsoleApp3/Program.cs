@@ -32,9 +32,9 @@ namespace ConsoleApp3
                 string userInput = Console.ReadLine();
                 
                 
-                if(int.TryParse(userInput, out int number) && Convert.ToInt32(userInput) < zoo.CountAviavaries && Convert.ToInt32(userInput) >= 0)
+                if(int.TryParse(userInput, out int number) && number < zoo.CountAviavaries && number >= 0)
                 {
-                    zoo.DrawAviares(Convert.ToInt32(userInput));
+                    zoo.DrawAviares(number);
                 }
                 else if (userInput == CommandExit)
                 {
