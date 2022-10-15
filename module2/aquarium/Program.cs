@@ -162,16 +162,11 @@ namespace aquarium
             {
                 return Age <= _maxOld;
             }
-            set
-            {
-
-            }
         }
 
         public Fish(string name = "нонейм", string type = "неопределено", int maxOld = 5)
         {
             Name = name;
-            IsLive = true;
             TypeFish = type;
             Age = 0;
             _maxOld = maxOld;
