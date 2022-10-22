@@ -1,0 +1,7 @@
+D:\CSharp\IUNIOR\module2\searchForCriminal\bin\Debug\searchForCriminal.exe.config
+D:\CSharp\IUNIOR\module2\searchForCriminal\bin\Debug\searchForCriminal.exe
+D:\CSharp\IUNIOR\module2\searchForCriminal\bin\Debug\searchForCriminal.pdb
+D:\CSharp\IUNIOR\module2\searchForCriminal\obj\Debug\searchForCriminal.csproj.AssemblyReference.cache
+D:\CSharp\IUNIOR\module2\searchForCriminal\obj\Debug\searchForCriminal.csproj.CoreCompileInputs.cache
+D:\CSharp\IUNIOR\module2\searchForCriminal\obj\Debug\searchForCriminal.exe
+D:\CSharp\IUNIOR\module2\searchForCriminal\obj\Debug\searchForCriminal.pdb
