@@ -32,7 +32,7 @@ namespace library
                 switch (userInput)
                 {
                     case CommandShowBooks:
-                        library.ShowBooksByName();
+                        library.ShowBooksInfo();
                         break;
 
                     case CommandDeleteBook:
@@ -44,7 +44,7 @@ namespace library
                         break;
 
                     case CommandSearch:
-                        library.SearchBook();
+                        library.SearchBooksByOption();
                         break;
 
                     case CommandExit:
@@ -77,7 +77,7 @@ namespace library
         
         public void DeleteBook()
         {
-            ShowBooksByName();
+            ShowBooksInfo();
 
             if (_books.Count == 0)
             {
@@ -101,7 +101,7 @@ namespace library
             Console.ReadKey();
         }
         
-        public void ShowBooksByName()
+        public void ShowBooksInfo()
         {
             int index = 0;
 
@@ -113,7 +113,7 @@ namespace library
             }
         }
 
-        public void SearchBook()
+        public void SearchBooksByOption()
         {
             const string CommandSearchName = "1";
             const string CommandSearchAuthor = "2";
