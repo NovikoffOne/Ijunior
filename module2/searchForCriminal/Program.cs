@@ -38,21 +38,6 @@ namespace searchForCriminal
         }
     }
 
-    static class UserUtils
-    {
-        public static int ReadInt()
-        {
-            int number;
-
-            while(!int.TryParse(Console.ReadLine(), out number))
-            {
-                Console.WriteLine("Данные неверны...");
-            }
-
-            return number;
-        }
-    }
-
     class Criminal
     {
         public string FullName { get; private set; }
