@@ -11,8 +11,9 @@ namespace TopPlayers
         static void Main(string[] args)
         {
             Server server = new Server();
+            bool isWork = true;
 
-            while (true)
+            while (isWork)
             {
                 const string CommandShowTopByRating = "1";
                 const string CommandShowTopByLevel = "2";
@@ -33,7 +34,7 @@ namespace TopPlayers
                 }
                 else
                 {
-                    return;
+                    isWork = false;
                 }
             }
         }
@@ -42,7 +43,7 @@ namespace TopPlayers
     class Server
     {
         private List<Player> _players;
-        int playersInTop = 3;
+        private int _numberOfTopPlayers = 3;
 
         public Server()
         {
@@ -63,19 +64,21 @@ namespace TopPlayers
 
         public void ShowTopPlayerByRating()
         {
-            var topPlayers = _players.OrderByDescending(player => player.Rating).Take(playersInTop);
+            var topPlayers = _players.OrderByDescending(player => player.Rating).Take(_numberOfTopPlayers);
 
-            foreach (var player in topPlayers)
-            {
-                player.ShowInfo();
-            }
+            ShowPlayersTop(topPlayers.ToList());
         }
 
         public void ShowTopPlayerByLevel()
         {
-            var topPlayers = _players.OrderByDescending(player => player.Level).Take(playersInTop);
+            var topPlayers = _players.OrderByDescending(player => player.Level).Take(_numberOfTopPlayers);
 
-            foreach (var player in topPlayers)
+            ShowPlayersTop(topPlayers.ToList());
+        }
+
+        private void ShowPlayersTop(List<Player> players)
+        {
+            foreach (var player in players)
             {
                 player.ShowInfo();
             }
