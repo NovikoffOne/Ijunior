@@ -77,21 +77,15 @@ namespace Hospital
         public void SortPatientsByName()
         {
             var sortedPatients = _patients.OrderBy(patient=>patient.FullName);
-            
-            foreach (var patient in sortedPatients)
-            {
-                patient.ShowInfo();
-            }
+
+            ShowPatientsInfo(sortedPatients);
         }
 
         public void SortPatientsByAge()
         {
             var sortedPatients = _patients.OrderBy(patient => patient.Age);
 
-            foreach (var patient in sortedPatients)
-            {
-                patient.ShowInfo();
-            }
+            ShowPatientsInfo(sortedPatients);
         }
 
         public void ShowPatieentsByDisease()
@@ -107,10 +101,15 @@ namespace Hospital
             }
             else
             {
-                foreach (var patient in filtredPatients)
-                {
-                    patient.ShowInfo();
-                }
+                ShowPatientsInfo(filtredPatients);
+            }
+        }
+
+        private void ShowPatientsInfo(IEnumerable<Patient> patients)
+        {
+            foreach (var patient in patients)
+            {
+                patient.ShowInfo();
             }
         }
     }
