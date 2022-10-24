@@ -35,7 +35,8 @@ namespace UnificationOfTroops
             };
 
             var filtredSoldier = reinforcement.Where(soldier => soldier.Name[0] == transferTerms);
-            soldiers = soldiers.Concat(filtredSoldier).ToList();
+            soldiers = soldiers.Union(filtredSoldier).ToList();
+            reinforcement = reinforcement.Except(filtredSoldier).ToList();
 
             foreach (var soldier in soldiers)
             {
