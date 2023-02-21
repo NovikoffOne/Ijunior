@@ -6,7 +6,7 @@ namespace CurrencyConverter2
     {
         static void Main(string[] args)
         {
-            int pricePerCrystal = 10;
+            int crystalPrice = 10;
 
             Console.WriteLine("Добро пожаловть в магазин кристаллов! Курс равен 1:10 ");
 
@@ -14,12 +14,11 @@ namespace CurrencyConverter2
             int gold = Convert.ToInt32(Console.ReadLine());
 
             Console.Write("Сколько кристаллов вы хотите приобрести? : ");
-            int crystalsQuantity = Convert.ToInt32(Console.ReadLine());
+            int crystals = Convert.ToInt32(Console.ReadLine());
 
-            int crystalsInInventory = crystalsQuantity;
-            gold -= crystalsQuantity * pricePerCrystal;
+            gold -= crystals * crystalPrice;
 
-            Console.WriteLine($"В вашем инвентаре {crystalsInInventory} кристаллов и {gold}");
+            Console.WriteLine($"В вашем инвентаре {crystals} кристаллов и {gold}");
         }
     }
 }
